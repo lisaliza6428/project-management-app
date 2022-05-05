@@ -1,1 +1,16 @@
-<p>sign-up works!</p>
+<div class="container">
+  <form class="form" [formGroup]="formGroup" (submit)="onSubmit()">
+    <div class="form__title">
+      <span class="form__title-login" routerLink="../log-in">Log In</span>
+      <span class="form__title-divider">/</span>
+      <span class="form__title-signup">Sign Up</span>
+    </div>
+    <h3 class="form__field-title">name</h3>
+    <input class="form__field-input" formControlName="name" name="name" id="name" type="text">
+    <h3 class="form__field-title">email</h3>
+    <input class="form__field-input" formControlName="login" name="login" id="login" type="text">
+    <h3 class="form__field-title">password</h3>
+    <input class="form__field-input" formControlName="password" name="password" id="password" type="text">
+    <button class="form__submit" [disabled]="formGroup.invalid" type="submit">Sign Up</button>
+  </form>
+</div>
