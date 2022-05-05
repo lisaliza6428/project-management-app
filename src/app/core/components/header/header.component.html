@@ -3,8 +3,8 @@
     <div class="header">
       <div class="header__left">Project Management App </div>
       <div class="header__right">
-        <button class="header__button" *ngIf="true" routerLink="auth/log-in">Log In / Sign Up</button>
-        <button class="header__button" *ngIf="true">Log Out</button>
+        <button class="header__button" *ngIf="!authService.isLogged" routerLink="auth/log-in">Log In / Sign Up</button>
+        <button class="header__button" *ngIf="authService.isLogged" (click)="authService.logOut()" >Log Out</button>
       </div>
     </div>
   </div>

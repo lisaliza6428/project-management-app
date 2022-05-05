@@ -1,6 +1,8 @@
 /* eslint-disable import/named */
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+
 
 @Component({
   selector: 'app-log-in',
@@ -11,7 +13,10 @@ export class LogInComponent implements OnInit {
 
   formGroup!: FormGroup;
 
-  constructor(public fb: FormBuilder) { }
+  constructor(
+    public fb: FormBuilder,
+    public authService: AuthService,
+  ) { }
 
   ngOnInit(): void {
     this.formGroup = this.fb.group({
@@ -26,6 +31,7 @@ export class LogInComponent implements OnInit {
   onSubmit() {
     if (this.formGroup.status === 'VALID') {
       console.log('VALID!');
+      this.authService.logIn(this.formGroup.value);
     } else {
       console.log('INVALID!');
     }

@@ -1,6 +1,7 @@
 /* eslint-disable import/named */
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -11,7 +12,10 @@ export class SignUpComponent implements OnInit {
 
   formGroup!: FormGroup;
 
-  constructor(public fb: FormBuilder) { }
+  constructor(
+    public fb: FormBuilder,
+    public authService: AuthService,
+  ) { }
 
   ngOnInit(): void {
     this.formGroup = this.fb.group({
@@ -26,6 +30,7 @@ export class SignUpComponent implements OnInit {
 
   onSubmit() {
     if (this.formGroup.status === 'VALID') {
+      this.authService.createNewUser(this.formGroup.value);
       console.log('VALID!');
     } else {
       console.log('INVALID!');
