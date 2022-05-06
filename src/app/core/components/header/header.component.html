@@ -5,7 +5,7 @@
       <div class="header__right">
         <div class="header__user" *ngIf="authService.isLogged">
           <img class="header__user-icon" src="../../../../assets/svg/user.svg" alt="user">
-          <span class="header__user-name">{{ authService.userName }}</span>
+          <span class="header__user-name">{{ name }}</span>
         </div>
         <button class="header__button" *ngIf="!authService.isLogged" routerLink="auth/log-in">Log In / Sign Up</button>
         <button class="header__button" *ngIf="authService.isLogged" (click)="authService.logOut()" >Log Out</button>

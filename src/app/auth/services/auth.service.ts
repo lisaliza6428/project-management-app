@@ -12,11 +12,12 @@ export class AuthService {
 
   isLogged = this.checkAuthorization();
 
-  userName = this.getUserName();
+  userName = '';
 
   isLoggedChange: Subject<boolean> = new Subject<boolean>();
 
   userNameChange: Subject<string> = new Subject<string>();
+
 
   constructor(
     public http: HttpClient,
@@ -25,23 +26,26 @@ export class AuthService {
     this.isLoggedChange.subscribe((value: boolean) => {
       this.isLogged = value;
     });
-
     this.userNameChange.subscribe((value: string) => {
       this.userName = value;
     });
+    this.getUserName();
   }
 
   checkAuthorization() {
     return Boolean(localStorage.getItem('token'));
   }
 
+
   getUserName() {
     const auth = localStorage.getItem('auth');
     if (auth && this.isLogged) {
       const authData: AuthDataModel = JSON.parse(auth);
-      return authData.name;
+      this.userName = authData.name;
+    } else {
+      this.userName = 'User';
     }
-    return 'User';
+    this.userNameChange.next(this.userName);
   }
 
   createNewUser(body: SignUpModel) {
@@ -56,8 +60,8 @@ export class AuthService {
     this.http.post(BASE_URL + 'signin', body).subscribe((value) => {
       localStorage.setItem('token', JSON.stringify(value));
       this.isLogged = true;
-      this.router.navigate(['']);
       this.getUserName();
+      this.router.navigate(['']);
       //console.log(value);
     });
   }
