@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { AuthService } from '../../../auth/services/auth.service';
 
@@ -9,17 +10,9 @@ import { AuthService } from '../../../auth/services/auth.service';
 })
 export class HeaderComponent {
 
-  name = '';
-
   constructor(public authService: AuthService) { 
-    this.getUserName();
+
   }
 
-  getUserName() {
-    const auth = localStorage.getItem('auth');
-    if (auth && this.authService.isLogged) {
-      const authData = JSON.parse(auth);
-      this.name = authData.name;
-    }
-  }
+
 }

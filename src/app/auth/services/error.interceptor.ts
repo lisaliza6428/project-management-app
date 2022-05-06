@@ -9,7 +9,7 @@ import {
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { Error } from '../models/models';
+import { ErrorModel } from '../models/models';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
@@ -19,7 +19,7 @@ export class ErrorInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     // console.log(request);
     return next.handle(request).pipe(
-      catchError((error: Error) => {
+      catchError((error: ErrorModel) => {
         switch (error.status) {
           case 401:
             this.router.navigateByUrl('auth/log-in');

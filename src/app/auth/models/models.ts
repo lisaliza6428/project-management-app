@@ -10,7 +10,13 @@ export interface LoginModel {
   password: string,
 }
 
-export interface Error {
+export interface AuthDataModel {
+  id: string,
+  login: string,
+  name: string,
+}
+
+export interface ErrorModel {
   status?: number;
   statusText?: string;
 }
