@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { validateUpperCase, validateLowerCase, validateNumbers, validateSpecial } from '../../services/validators';
 
 
 @Component({
@@ -23,17 +24,29 @@ export class LogInComponent implements OnInit {
       login: ['', [Validators.required, Validators.email]],
       password: ['', [
         Validators.required,
+        validateUpperCase,
+        validateLowerCase,
+        validateNumbers,
+        validateSpecial,
         Validators.minLength(8),
       ]],
     });
   }
 
+  get _login() {
+    return this.formGroup.controls['login'];
+  }
+
+  get _password() {
+    return this.formGroup.controls['password'];
+  }
+
   onSubmit() {
     if (this.formGroup.status === 'VALID') {
-      console.log('VALID!');
+      // console.log('VALID!');
       this.authService.logIn(this.formGroup.value);
     } else {
-      console.log('INVALID!');
+      // console.log('INVALID!');
     }
   }
 

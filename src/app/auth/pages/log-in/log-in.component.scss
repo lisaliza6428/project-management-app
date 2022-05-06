@@ -17,17 +17,17 @@
     margin: 10px 0;
     &-login {
       font-size: 28px;
-      }
-    &-divider{
-        display: inline-block;
-        margin: 0 10px;
-        font-size: 26px;
-      }
+    }
+    &-divider {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 26px;
+    }
     &-signup {
-        border-bottom: solid 1px black;
-        cursor: pointer;
-        font-weight: 400;
-      }
+      border-bottom: solid 1px black;
+      cursor: pointer;
+      font-weight: 400;
+    }
   }
   .form__field-title {
     font-family: "Roboto";
@@ -70,5 +70,21 @@
     justify-content: flex-end;
     align-items: center;
     margin-top: 10px;
+  }
+
+  .error-container {
+    min-height: 18px;
+  }
+  .message {
+    display: block;
+  }
+  .ng-invalid.ng-touched {
+    border: red 1px solid;
+  }
+  .ng-invalid.ng-dirty {
+    border: red 1px solid;
+  }
+  .ng-valid.ng-touched {
+    border: green 1px solid;
   }
 }

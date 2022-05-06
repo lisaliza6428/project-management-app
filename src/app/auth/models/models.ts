@@ -9,3 +9,8 @@ export interface LoginModel {
   login: string,
   password: string,
 }
+
+export interface Error {
+  status?: number;
+  statusText?: string;
+}

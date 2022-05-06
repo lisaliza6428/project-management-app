@@ -27,7 +27,7 @@ export class AuthService {
     this.http.post(BASE_URL + 'signup', body).subscribe((value) => {
       localStorage.setItem('auth', JSON.stringify(value));
       this.router.navigate(['auth/log-in']);
-      console.log(value);
+      // console.log(value);
     });
   }
 
@@ -36,7 +36,7 @@ export class AuthService {
       localStorage.setItem('token', JSON.stringify(value));
       this.isLogged = true;
       this.router.navigate(['']);
-      console.log(value);
+      // console.log(value);
     });
   }
 
