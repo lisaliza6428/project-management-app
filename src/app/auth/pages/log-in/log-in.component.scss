@@ -1,0 +1,91 @@
+.form {
+  width: 420px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 100px auto;
+  padding: 20px;
+
+  .form__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    margin: 10px 0;
+    &-login {
+      font-size: 28px;
+    }
+    &-divider {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 26px;
+    }
+    &-signup {
+      border-bottom: solid 1px black;
+      cursor: pointer;
+      font-weight: 400;
+    }
+  }
+  .form__field-title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    color: #828282;
+    margin: 10px 0;
+  }
+
+  .form__field-input {
+    width: 100%;
+    height: 40px;
+    background-color: #e0e0e0;
+    border: 1px solid #e0e0e0;
+    padding: 5px 10px;
+    &:focus {
+      outline: none;
+      border: 1px solid blue;
+    }
+  }
+  .form__submit {
+    display: block;
+    width: 180px;
+    height: 30px;
+    margin: 20px 0 0 auto;
+    color: white;
+    background-color: #2f80ed;
+    border: 1px solid #2f80ed;
+    border-radius: 5px;
+    cursor: pointer;
+    &:disabled {
+      background-color: grey;
+      cursor: auto;
+    }
+  }
+  .buttons-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .error-container {
+    min-height: 18px;
+  }
+  .message {
+    display: block;
+    color: #828282;
+  }
+  .ng-invalid.ng-touched {
+    border: red 1px solid;
+  }
+  .ng-invalid.ng-dirty {
+    border: red 1px solid;
+  }
+  .ng-valid.ng-touched {
+    border: green 1px solid;
+  }
+}

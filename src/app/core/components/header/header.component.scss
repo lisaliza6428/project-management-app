@@ -1,5 +1,38 @@
 header {
   padding: 20px;
   background-color: rgb(99, 159, 255);
-  height: 60px;
+  //height: 60px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__right {
+  display: flex;
+}
+.header__button {
+  padding: 5px 10px;
+  font-weight: 500;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.header__user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 10px;
+  .header__user-icon {
+    width: 20px;
+  }
+  .header__user-name {
+    font-size: 20px;
+    margin-left: 3px;
+  }
 }
