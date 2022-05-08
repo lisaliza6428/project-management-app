@@ -1,0 +1,127 @@
+.list-container {
+  padding: 10px;
+  max-width: 100%;
+  border: solid 1px #ccc;
+  min-height: 60px;
+  display: block;
+  background: #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cdk-drag {
+  min-height: 40px;
+  padding: 4px;
+  margin-bottom: 4px;
+  border: solid 1px #ccc;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 14px;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.list-item {
+  margin: 5px;
+
+}
+
+.list-item:last-child {
+  border: none;
+}
+
+.item-input {
+  width: 100%;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid #ccc;;
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: 0;
+  padding: 4px 20px 0;
+}
+
+.placeholder {
+  color: #65657b;
+  font-family: sans-serif;
+  left: 20px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+  top: 20px;
+}
+
+.item-input:focus ~ .placeholder,
+.item-input:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.item-input:not(:placeholder-shown) ~ .placeholder {
+  color: #808097;
+}
+
+.item-input:focus ~ .placeholder {
+  color: #dc2f55;
+}
+
+.cut {
+  border-radius: 10px;
+  background-color: #ccc;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 110px;
+}
+
+.cut-short {
+  width: 80px;
+}
+
+.ic1 {
+  margin-top: 22px;
+}
+
+.item-input:focus ~ .cut,
+.item-input:not(:placeholder-shown) ~ .cut {
+  transform: translateY(8px);
+}
+
+.input-container {
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.item-button {
+  background-color: #08d;
+  border-radius: 8px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 14px;
+  height: 25px;
+  text-align: center;
+  width: 100%
+}
+
+.item-button:active {
+  background-color: #06b;
+}

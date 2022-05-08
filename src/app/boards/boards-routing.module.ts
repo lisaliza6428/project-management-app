@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 // eslint-disable-next-line import/named
 import { RouterModule, Routes } from '@angular/router';
-import { ListComponent } from './components/list/list.component';
+import { BoardComponent } from './components/board/board.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ListComponent,
+    component: BoardComponent,
   },
 ];
 

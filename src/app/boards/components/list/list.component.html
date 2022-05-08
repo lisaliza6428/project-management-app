@@ -1,1 +1,19 @@
-<p>list works!</p>
+<div class="list-container">
+  <div cdkDropList [cdkDropListData]="items" (cdkDropListDropped)="drop($event)" class="list">
+    <div *ngFor="let item of items" cdkDrag>{{item}}</div>
+  </div>
+  <form #newItemForm="ngForm" (ngSubmit)="onSubmit(newItemForm)">
+    <div class="input-container ic1">
+      <input
+        id="add-item"
+        class="item-input"
+        name="newItem"
+        ngModel type="text"
+        placeholder=" "
+      >
+      <div class="cut"></div>
+      <label for="add-item" class="placeholder">Enter a new item</label>
+    </div>
+      <button type="submit" class="item-button">Add Item</button>
+  </form>
+</div>
