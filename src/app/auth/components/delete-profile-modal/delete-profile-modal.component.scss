@@ -1,0 +1,10 @@
+.dialog__title {
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+::ng-deep mat-dialog-container {
+  background-color: #1d69e2 !important;
+}
+

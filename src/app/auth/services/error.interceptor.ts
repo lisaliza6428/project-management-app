@@ -18,6 +18,12 @@ export class ErrorInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     // console.log(request);
+
+    const token = this.getToken();
+    request = request.clone({
+      setHeaders: { 'Authorization': `Bearer ${token}` },
+    });
+
     return next.handle(request).pipe(
       catchError((error: ErrorModel) => {
         switch (error.status) {
@@ -35,5 +41,13 @@ export class ErrorInterceptor implements HttpInterceptor {
         return throwError(error);
       }),
     );
+  }
+
+  getToken() {
+    const data = localStorage.getItem('token') || '';
+    if (data) {
+      const token  = JSON.parse(data).token;
+      return token;
+    }
   }
 }

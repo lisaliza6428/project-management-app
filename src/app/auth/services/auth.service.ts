@@ -56,6 +56,12 @@ export class AuthService {
     });
   }
 
+  getUsers() {
+    this.http.get(BASE_URL + 'users').subscribe((value) => {
+      console.log(value);
+    });
+  }
+
   logIn(body: LoginModel) {
     this.http.post(BASE_URL + 'signin', body).subscribe((value) => {
       localStorage.setItem('token', JSON.stringify(value));
@@ -69,6 +75,30 @@ export class AuthService {
   logOut() {
     this.isLogged = false;
     localStorage.removeItem('token');
-    this.router.navigate(['auth/log-in']);
+    this.router.navigate(['welcome']);
+  }
+
+  deleteUser() {
+    const info = localStorage.getItem('auth');
+    if (info) {
+      const userId = JSON.parse(info).id;
+      console.log(userId);
+      this.http.delete(BASE_URL + `users/${userId}`).subscribe((value) => {
+        console.log(value);
+        localStorage.removeItem('auth');
+        this.logOut();
+      });
+    }
+  }
+
+  updateUser(body: any) {
+    const info = localStorage.getItem('auth');
+    if (info) {
+      const userId = JSON.parse(info).id;
+      this.http.put(BASE_URL + `users/${userId}`, body).subscribe((value) => {
+        console.log(value);
+        localStorage.setItem('auth', JSON.stringify(value));
+      });
+    }
   }
 }
