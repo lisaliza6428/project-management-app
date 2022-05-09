@@ -10,12 +10,16 @@ import { ErrorInterceptor } from './auth/services/error.interceptor';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgMaterialModule } from './ng-material/ng-material/ng-material.module';
+import { WelcomePageComponent } from './core/pages/welcome-page/welcome-page.component';
+import { ErrorPageComponent } from './core/pages/error-page/error-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    WelcomePageComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,
