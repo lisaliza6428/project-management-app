@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { validateUpperCase, validateLowerCase, validateNumbers, validateSpecial } from '../../services/validators';
+import { TranslateLoader } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-edit-profile-form',
@@ -16,6 +17,7 @@ export class EditProfileFormComponent implements OnInit {
   constructor(
     public fb: FormBuilder,
     public authService: AuthService,
+    public translate: TranslateLoader,
   ) { }
 
   ngOnInit(): void {

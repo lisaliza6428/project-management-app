@@ -6,6 +6,7 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -21,6 +22,10 @@ import { EditProfileComponent } from './pages/edit-profile/edit-profile.componen
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    TranslateModule,
+  ],
+  exports: [
+    TranslateModule,
   ],
 })
 export class AuthModule { }

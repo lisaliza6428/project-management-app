@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditProfileFormComponent } from '../../components/edit-profile-form/edit-profile-form.component';
 import { DeleteProfileModalComponent } from '../../components/delete-profile-modal/delete-profile-modal.component';
 import { AuthDataModel } from '../../models/models';
+import { TranslateLoader } from '@ngx-translate/core';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class EditProfileComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog,
+    public translateLoader: TranslateLoader,
   ) { }
 
   ngOnInit(): void {

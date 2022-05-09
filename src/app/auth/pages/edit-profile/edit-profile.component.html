@@ -1,11 +1,11 @@
 <div class="container">
    <div class="edit-page">
-      <h3 class="edit-page__title">Your profile data:</h3>
-      <div (click)="getAuthData()">name: {{ auth.name }}</div>
-      <div>email: {{ auth.login }}</div>
-      <div>password: **********</div>
-      <button class="edit-page__button"  (click)="openEditForm()">Edit profile</button>
-      <button class="edit-page__button" (click)="openConfirmDialog()">Delete Profile</button>
+      <h3 class="edit-page__title">{{'editProfilePage.title' | translate}}</h3>
+      <div (click)="getAuthData()">{{'editProfilePage.name' | translate}} {{ auth.name }}</div>
+      <div>{{'editProfilePage.email' | translate}} {{ auth.login }}</div>
+      <div>{{'editProfilePage.password' | translate}} **********</div>
+      <button class="edit-page__button"  (click)="openEditForm()">{{'editProfilePage.editButton' | translate}}</button>
+      <button class="edit-page__button" (click)="openConfirmDialog()">{{'editProfilePage.deleteButton' | translate}}</button>
    </div>
 </div>
 

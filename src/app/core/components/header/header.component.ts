@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../auth/services/auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { LogOutModalComponent } from '../../../auth/components/log-out-modal/log-out-modal.component';
+import { TranslateService, TranslateLoader } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,9 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     public authService: AuthService,
-    public dialog: MatDialog, 
+    public dialog: MatDialog,
+    public translateService: TranslateService,
+    public translate: TranslateLoader,
   ) { 
     this.name = authService.userName;
   }
@@ -30,4 +33,13 @@ export class HeaderComponent implements OnInit {
       panelClass: 'confirmForm',
     });
   }
+
+  onSelected(value: string) {
+    if (value === 'en') {
+      this.translateService.use('en');
+    } else {
+      this.translateService.use('ru');
+    }
+  }
+
 }
