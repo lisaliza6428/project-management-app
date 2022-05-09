@@ -12,6 +12,12 @@ header {
 .header__right {
   display: flex;
 }
+.header__edit {
+  width: 25px;
+  height: 30px;
+  margin: 0 5px;
+  cursor: pointer;
+}
 .header__button {
   padding: 5px 10px;
   font-weight: 500;
@@ -29,10 +35,16 @@ header {
   align-items: center;
   margin: 0 10px;
   .header__user-icon {
-    width: 20px;
+    width: 25px;
   }
   .header__user-name {
     font-size: 20px;
     margin-left: 3px;
   }
+}
+
+
+.logOutModal {
+  background-color: transparent !important;
+  max-width: none !important;
 }

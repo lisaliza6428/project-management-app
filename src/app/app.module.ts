@@ -8,7 +8,8 @@ import { AuthService } from './auth/services/auth.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './auth/services/error.interceptor';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgMaterialModule } from './ng-material/ng-material/ng-material.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    NgMaterialModule,
+
   ],
   providers: [
     AuthService,
@@ -32,6 +36,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
       provide: LocationStrategy,
       useClass: HashLocationStrategy,
     },
+  ],
+  exports: [
+    NgMaterialModule,
   ],
   bootstrap: [AppComponent],
 })

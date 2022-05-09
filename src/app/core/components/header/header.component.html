@@ -7,8 +7,9 @@
           <img class="header__user-icon" src="../../../../assets/svg/user.svg" alt="user">
           <span class="header__user-name">{{ name }}</span>
         </div>
+        <img class="header__edit" *ngIf="authService.isLogged" src="../../../../assets/svg/edit.svg" alt="edit">
         <button class="header__button" *ngIf="!authService.isLogged" routerLink="auth/log-in">Log In / Sign Up</button>
-        <button class="header__button" *ngIf="authService.isLogged" (click)="authService.logOut()" >Log Out</button>
+        <button class="header__button" *ngIf="authService.isLogged" (click)="openDialog()" >Log Out</button>
       </div>
     </div>
   </div>

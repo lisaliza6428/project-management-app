@@ -2,6 +2,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../auth/services/auth.service';
+import { MatDialog } from '@angular/material/dialog';
+import { LogOutModalComponent } from '../../../auth/components/log-out-modal/log-out-modal.component';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +14,10 @@ export class HeaderComponent implements OnInit {
 
   name = '';
 
-  constructor(public authService: AuthService) { 
+  constructor(
+    public authService: AuthService,
+    public dialog: MatDialog, 
+  ) { 
     this.name = authService.userName;
   }
 
@@ -20,4 +25,11 @@ export class HeaderComponent implements OnInit {
     this.authService.userNameChange.subscribe(value => {this.name = value;});
   }
 
+  openDialog() {
+    this.dialog.open(LogOutModalComponent, {
+      width: '300px',
+      height: '200px',
+      panelClass: 'logOutModal',
+    });
+  }
 }
