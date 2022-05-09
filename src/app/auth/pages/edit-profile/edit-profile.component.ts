@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EditProfileFormComponent } from '../../components/edit-profile-form/edit-profile-form.component';
 import { DeleteProfileModalComponent } from '../../components/delete-profile-modal/delete-profile-modal.component';
+import { AuthDataModel } from '../../models/models';
 
 
 @Component({
@@ -13,22 +14,33 @@ import { DeleteProfileModalComponent } from '../../components/delete-profile-mod
 })
 export class EditProfileComponent implements OnInit {
 
+  auth: AuthDataModel = this.getAuthData();
+
   constructor(
     public dialog: MatDialog,
   ) { }
 
   ngOnInit(): void {
-
   }
 
-  openForm() {
-    console.log('update form');
-    this.dialog.open(EditProfileFormComponent, {});
+  openEditForm() {
+    this.dialog.open(EditProfileFormComponent, {
+      panelClass: 'editProfileForm',
+    });
   }
 
-  openDialog() {
-    console.log('delete user');
-    this.dialog.open(DeleteProfileModalComponent, {});
+  openConfirmDialog() {
+    this.dialog.open(DeleteProfileModalComponent, {
+      panelClass: 'confirmForm',
+    });
   }
 
+  getAuthData() {
+    const auth = localStorage.getItem('auth');
+    if (auth) {
+      const info = JSON.parse(auth);
+      console.log(info);
+      return info;
+    }
+  }
 }

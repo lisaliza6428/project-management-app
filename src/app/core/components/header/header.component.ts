@@ -27,9 +27,7 @@ export class HeaderComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(LogOutModalComponent, {
-      width: '300px',
-      height: '200px',
-      panelClass: 'logOutModal',
+      panelClass: 'confirmForm',
     });
   }
 }

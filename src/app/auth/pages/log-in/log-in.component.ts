@@ -43,10 +43,7 @@ export class LogInComponent implements OnInit {
 
   onSubmit() {
     if (this.formGroup.status === 'VALID') {
-      // console.log('VALID!');
       this.authService.logIn(this.formGroup.value);
-    } else {
-      // console.log('INVALID!');
     }
   }
 

@@ -8,7 +8,7 @@ describe('DeleteProfileModalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeleteProfileModalComponent ],
+      declarations: [DeleteProfileModalComponent],
     })
       .compileComponents();
   });

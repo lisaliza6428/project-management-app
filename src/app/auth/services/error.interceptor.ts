@@ -46,7 +46,7 @@ export class ErrorInterceptor implements HttpInterceptor {
   getToken() {
     const data = localStorage.getItem('token') || '';
     if (data) {
-      const token  = JSON.parse(data).token;
+      const token = JSON.parse(data).token;
       return token;
     }
   }

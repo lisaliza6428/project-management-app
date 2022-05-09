@@ -56,9 +56,6 @@ export class SignUpComponent implements OnInit {
   onSubmit() {
     if (this.formGroup.status === 'VALID') {
       this.authService.createNewUser(this.formGroup.value);
-      // console.log('VALID!');
-    } else {
-      // console.log('INVALID!');
     }
   }
 }

@@ -39,9 +39,9 @@
   </div>
 
   <mat-dialog-actions align="center">
-    <button class="form__submit" mat-button mat-dialog-close>Cancel</button>
+
     <button class="form__submit" [mat-dialog-close] [disabled]="formGroup.invalid" type="submit">Confirm</button>
+    <button class="form__submit" mat-button mat-dialog-close>Cancel</button>
   </mat-dialog-actions>
 
 </form>
-
