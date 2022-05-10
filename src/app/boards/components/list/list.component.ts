@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/keyword-spacing */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable import/named */
 import { Component } from '@angular/core';
@@ -30,6 +31,7 @@ export class ListComponent {
   }
 
   onSubmit(newItemForm: NgForm) {
+    if(!newItemForm.value.newItem) return;
     this.items.push(newItemForm.value.newItem);
     newItemForm.reset();
   }

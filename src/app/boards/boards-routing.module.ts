@@ -8,6 +8,10 @@ const routes: Routes = [
     path: '',
     component: BoardComponent,
   },
+  {
+    path: 'edit',
+    component: BoardComponent,
+  },
 ];
 
 @NgModule({
