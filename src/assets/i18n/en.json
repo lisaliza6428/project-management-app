@@ -1,0 +1,56 @@
+{
+  "header": {
+    "login": "Log In / Sign Up",
+    "logOut": "Log Out"
+  },
+  "form": {
+    "login": "Log In",
+    "signup": "Sign Up",
+    "loginButton": "Log In",
+    "signupButton": "Sign Up",
+    "name": {
+      "name": "name",
+      "enter": "Please, enter your name",
+      "minLengthErr": "At least 3 characters",
+      "maxLengthErr": "No more then 12 characters"
+    },
+    "email": {
+      "enter": "Please, enter your email",
+      "emailErr": "This email is invalid"
+    },
+    "password": {
+      "password": "password",
+      "enter": "Please, enter your password",
+      "upperCaseErr": "At least one uppercase letter",
+      "lowerCaseErr": "At least one lowercase letter",
+      "numberErr": "At least one number",
+      "specialErr": "At least one special character (#?!@$%^&*-)",
+      "lengthErr": "At least 8 characters"
+    }
+  },
+  "modals": {
+    "logout": {
+      "message": "Are you sure you want to leave?",
+      "confirm": "Yes, Log Out",
+      "cancel": "Cancel"
+    },
+    "deleteProfile": {
+      "message": "Are you sure you want to delete your profile?",
+      "confirm": "Yes, delete",
+      "cancel": "Cancel"
+    },
+    "updateProfile": {
+      "title": "Please, enter new profile data",
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    }
+  },
+  "editProfilePage": {
+    "title": "Your profile data:",
+    "name": "name:",
+    "email": "email:",
+    "password": "password:",
+    "editButton": "Edit profile",
+    "deleteButton": "Delete profile"
+  }
+}

@@ -2,9 +2,9 @@
   width: 420px;
   border: 1px solid black;
   border-radius: 5px;
-  margin: 100px auto;
+  margin: 20px auto;
   padding: 20px;
-  border: 2px solid #639fff;
+  border: none;
 
   .form__title {
     color: #2f80ed;
@@ -18,7 +18,9 @@
     line-height: 21px;
     margin: 10px 0;
     &-login {
-      font-size: 28px;
+      border-bottom: solid 1px #2f80ed;
+      cursor: pointer;
+      font-weight: 400;
     }
     &-divider {
       display: inline-block;
@@ -26,9 +28,7 @@
       font-size: 26px;
     }
     &-signup {
-      border-bottom: solid 1px #2f80ed;
-      cursor: pointer;
-      font-weight: 400;
+      font-size: 28px;
     }
   }
   .form__field-title {

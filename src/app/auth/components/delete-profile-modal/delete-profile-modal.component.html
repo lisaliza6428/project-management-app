@@ -1,0 +1,7 @@
+<div class="dialog">
+  <h3 class="dialog__title">{{ 'modals.deleteProfile.message' | translate }}</h3>
+  <mat-dialog-actions align="center">
+    <button class="dialog__button" mat-button [mat-dialog-close]="true" (click)="logOut()" type="button">{{ 'modals.deleteProfile.confirm' | translate }}</button>
+    <button class="dialog__button" mat-button mat-dialog-close>{{ 'modals.deleteProfile.cancel' | translate }}</button>
+  </mat-dialog-actions>
+</div>

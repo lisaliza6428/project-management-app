@@ -1,0 +1,56 @@
+{
+  "header": {
+    "login": "Вход / Регистрация",
+    "logOut": "Выйти"
+  },
+  "form": {
+    "login": "Вход",
+    "signup": "Регистрация",
+    "loginButton": "Войти",
+    "signupButton": "Зарегистрироваться",
+    "name": {
+      "name": "имя",
+      "enter": "Введите имя",
+      "minLengthErr": "Минимум 3 символа",
+      "maxLengthErr": "Не более 12 символов"
+    },
+    "email": {
+      "enter": "Введите email",
+      "emailErr": "Этот email невалиден"
+    },
+    "password": {
+      "password": "пароль",
+      "enter": "Введите пароль",
+      "upperCaseErr": "Хотя бы одна заглавная буква",
+      "lowerCaseErr": "Хотя бы одна строчная буква",
+      "numberErr": "Хотя бы одна цифра",
+      "specialErr": "Хотя бы один специальный символ (#?!@$%^&*-)",
+      "lengthErr": "Минимум 8 символов"
+    }
+  },
+  "modals": {
+    "logout": {
+      "message": "Вы действительно хотите выйти?",
+      "confirm": "Да, выйти",
+      "cancel": "Закрыть"
+    },
+    "deleteProfile": {
+      "message": "Вы действительно хотите удалить свой профиль?",
+      "confirm": "Да, удалить",
+      "cancel": "Закрыть"
+    },
+    "updateProfile": {
+      "title": "Введите данные",
+      "confirm": "Подтвердить",
+      "cancel": "Закрыть"
+    }
+  },
+  "editProfilePage": {
+    "title": "Данные вашего профиля:",
+    "name": "имя:",
+    "email": "email:",
+    "password": "пароль:",
+    "editButton": "Редактировать профиль",
+    "deleteButton": "Удалить профиль"
+  }
+}

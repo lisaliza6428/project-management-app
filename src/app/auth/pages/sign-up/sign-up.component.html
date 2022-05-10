@@ -1,17 +1,17 @@
 <div class="container">
   <form class="form" [formGroup]="formGroup" (submit)="onSubmit()">
     <div class="form__title">
-      <span class="form__title-login" routerLink="../log-in">Log In</span>
+      <span class="form__title-login" routerLink="../log-in">{{ 'form.login' | translate }}</span>
       <span class="form__title-divider">/</span>
-      <span class="form__title-signup">Sign Up</span>
+      <span class="form__title-signup">{{ 'form.signup' | translate }}</span>
     </div>
-    <h3 class="form__field-title">name</h3>
+    <h3 class="form__field-title">{{ 'form.name.name' | translate }}</h3>
     <input class="form__field-input" formControlName="name" name="name" id="name" type="text">
     <div class="error-container">
       <div *ngIf="_name.invalid && (_name.touched || _name.dirty || _name.untouched)">
-        <span class="message" *ngIf="_name.errors?.['required']">Please enter your name</span>
-        <span class="message" *ngIf="_name.errors?.['minlength']">At least 3 characters</span>
-        <span class="message" *ngIf="_name.errors?.['maxlength']">No more then 12 characters</span>
+        <span class="message" *ngIf="_name.errors?.['required']">{{ 'form.name.enter' | translate }}</span>
+        <span class="message" *ngIf="_name.errors?.['minlength']">{{ 'form.name.minLengthErr' | translate }}</span>
+        <span class="message" *ngIf="_name.errors?.['maxlength']">{{ 'form.name.maxLengthErr' | translate }}</span>
       </div>
     </div>
 
@@ -19,27 +19,27 @@
     <input class="form__field-input" formControlName="login" name="login" id="login" type="text">
     <div class="error-container">
       <div *ngIf="_login.invalid && (_login.touched || _login.dirty || _login.untouched)">
-        <span class="message" *ngIf="_login.errors?.['required']">Please enter your email</span>
-        <span class="message" *ngIf="_login.errors?.['email']">This email is invalid</span>
+        <span class="message" *ngIf="_login.errors?.['required']">{{ 'form.email.enter' | translate }}</span>
+        <span class="message" *ngIf="_login.errors?.['email']">{{ 'form.email.emailErr' | translate }}</span>
       </div>
     </div>
 
-    <h3 class="form__field-title">password</h3>
+    <h3 class="form__field-title">{{ 'form.password.password' | translate }}</h3>
     <input class="form__field-input" formControlName="password" name="password" id="password" type="text">
     <div class="error-container">
       <div *ngIf="_password.invalid && (_password.touched || _password.dirty || _password.untouched)">
-        <span class="message" *ngIf="_password.errors?.['required']">Please enter your password</span>
+        <span class="message" *ngIf="_password.errors?.['required']">{{ 'form.password.enter' | translate }}</span>
         <span class="message" *ngIf="_password.errors?.['validateUpperCase'] && _password.dirty">
-          At least one uppercase letter</span>
+          {{ 'form.password.upperCaseErr' | translate }}</span>
         <span class="message" *ngIf="_password.errors?.['validateLowerCase'] && _password.dirty">
-          At least one lowercase letter</span>
+          {{ 'form.password.lowerCaseErr' | translate }}</span>
         <span class="message" *ngIf="_password.errors?.['validateNumbers'] && _password.dirty">
-          At least one number</span>
+          {{ 'form.password.numberErr' | translate }}</span>
         <span class="message" *ngIf="_password.errors?.['validateSpecial'] && _password.dirty">
-          At least one special character (#?!@$%^&*-)</span>
-        <span class="message" *ngIf="_password.errors?.['minlength']">At least 8 characters</span>
+          {{ 'form.password.specialErr' | translate }}</span>
+        <span class="message" *ngIf="_password.errors?.['minlength']">{{ 'form.password.lengthErr' | translate }}</span>
       </div>
     </div>
-    <button class="form__submit" [disabled]="formGroup.invalid" type="submit">Sign Up</button>
+    <button class="form__submit" [disabled]="formGroup.invalid" type="submit">{{ 'form.signupButton' | translate }}</button>
   </form>
 </div>

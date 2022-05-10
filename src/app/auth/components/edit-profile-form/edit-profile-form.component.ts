@@ -5,13 +5,12 @@ import { AuthService } from '../../services/auth.service';
 import { validateUpperCase, validateLowerCase, validateNumbers, validateSpecial } from '../../services/validators';
 import { TranslateLoader } from '@ngx-translate/core';
 
-
 @Component({
-  selector: 'app-log-in',
-  templateUrl: './log-in.component.html',
-  styleUrls: ['./log-in.component.scss'],
+  selector: 'app-edit-profile-form',
+  templateUrl: './edit-profile-form.component.html',
+  styleUrls: ['./edit-profile-form.component.scss'],
 })
-export class LogInComponent implements OnInit {
+export class EditProfileFormComponent implements OnInit {
 
   formGroup!: FormGroup;
 
@@ -23,7 +22,15 @@ export class LogInComponent implements OnInit {
 
   ngOnInit(): void {
     this.formGroup = this.fb.group({
-      login: ['', [Validators.required, Validators.email]],
+      name: ['', [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(20),
+      ]],
+      login: ['', [
+        Validators.required,
+        Validators.email,
+      ]],
       password: ['', [
         Validators.required,
         validateUpperCase,
@@ -33,6 +40,10 @@ export class LogInComponent implements OnInit {
         Validators.minLength(8),
       ]],
     });
+  }
+
+  get _name() {
+    return this.formGroup.controls['name'];
   }
 
   get _login() {
@@ -45,8 +56,9 @@ export class LogInComponent implements OnInit {
 
   onSubmit() {
     if (this.formGroup.status === 'VALID') {
-      this.authService.logIn(this.formGroup.value);
+      this.authService.updateUser(this.formGroup.value);
+    } else {
+      // console.log('INVALID!');
     }
   }
-
 }

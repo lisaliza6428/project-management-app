@@ -1,38 +1,56 @@
 header {
   padding: 20px;
   background-color: rgb(99, 159, 255);
-  //height: 60px;
 }
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.header__right {
-  display: flex;
-}
-.header__button {
-  padding: 5px 10px;
-  font-weight: 500;
-  background-color: white;
-  border: 1px solid white;
-  border-radius: 5px;
-  margin-left: 10px;
-  cursor: pointer;
-  font-size: 16px;
-}
 
-.header__user {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 0 10px;
-  .header__user-icon {
-    width: 20px;
+  .header__right {
+    display: flex;
   }
-  .header__user-name {
-    font-size: 20px;
-    margin-left: 3px;
+
+  .header__select {
+    outline: none;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0 10px;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+
+  .header__user {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+    .header__user-icon {
+      width: 25px;
+    }
+    .header__user-name {
+      font-size: 20px;
+      margin-left: 3px;
+    }
+
+    .header__user-edit {
+      width: 25px;
+      height: 30px;
+      margin: 0 5px 0 15px;
+      cursor: pointer;
+    }
+  }
+
+  .header__button {
+    padding: 5px 10px;
+    font-weight: 500;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
   }
 }
