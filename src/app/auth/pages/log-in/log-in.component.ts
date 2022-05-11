@@ -6,6 +6,7 @@ import { validateUpperCase, validateLowerCase, validateNumbers, validateSpecial 
 import { TranslateLoader } from '@ngx-translate/core';
 
 
+
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
@@ -46,7 +47,7 @@ export class LogInComponent implements OnInit {
   onSubmit() {
     if (this.formGroup.status === 'VALID') {
       this.authService.logIn(this.formGroup.value);
+      this.formGroup.reset();
     }
   }
-
 }

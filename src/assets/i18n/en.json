@@ -43,13 +43,25 @@
       "title": "Please, enter new profile data",
       "confirm": "Confirm",
       "cancel": "Cancel"
+    },
+    "error401": {
+      "message": "Your session has expired. You must be logged in to continue.",
+      "login": "Log In",
+      "cancel": "Cancel"
+    },
+    "error403": {
+      "message": "Incorrect email or password",
+      "cancel": "OK"
+    },
+    "error409": {
+      "message": "A user with this email already exists",
+      "cancel": "OK"
     }
   },
   "editProfilePage": {
     "title": "Your profile data:",
     "name": "name:",
     "email": "email:",
-    "password": "password:",
     "editButton": "Edit profile",
     "deleteButton": "Delete profile"
   }

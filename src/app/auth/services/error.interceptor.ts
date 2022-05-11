@@ -10,37 +10,51 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ErrorModel } from '../models/models';
+import { MatDialog } from '@angular/material/dialog';
+import { Error401ModalComponent } from '../components/error401-modal/error401-modal.component';
+import { Error403ModalComponent } from '../components/error403-modal/error403-modal.component';
+import { Error409ModalComponent } from '../components/error409-modal/error409-modal.component';
+
+
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
 
-  constructor(public router: Router) { }
+  constructor(
+    public router: Router,
+    public dialog: MatDialog,
+  ) { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    // console.log(request);
-
     const token = this.getToken();
     request = request.clone({
       setHeaders: { 'Authorization': `Bearer ${token}` },
     });
-
+    // console.log(request);
     return next.handle(request).pipe(
       catchError((error: ErrorModel) => {
         switch (error.status) {
           case 401:
+            this.dialog.open(Error401ModalComponent, {
+              panelClass: 'confirmForm',
+            });
             this.router.navigateByUrl('auth/log-in');
-            console.log(`error status : ${error.status} ${error.statusText}`);
             break;
           case 403:
-            console.log(`error status : ${error.status} ${error.statusText}`);
+            this.dialog.open(Error403ModalComponent, {
+              panelClass: 'confirmForm',
+            });
             break;
           case 409:
-            console.log(`error status : ${error.status} ${error.statusText}`);
+            this.dialog.open(Error409ModalComponent, {
+              panelClass: 'confirmForm',
+            });
             break;
         }
         return throwError(error);
       }),
     );
+
   }
 
   getToken() {

@@ -57,8 +57,8 @@ export class AuthService {
   }
 
   getUsers() {
-    this.http.get(BASE_URL + 'users').subscribe((value) => {
-      console.log(value);
+    this.http.get(BASE_URL + 'users').subscribe(() => {
+      // console.log(value);
     });
   }
 
@@ -82,22 +82,21 @@ export class AuthService {
     const info = localStorage.getItem('auth');
     if (info) {
       const userId = JSON.parse(info).id;
-      console.log(userId);
-      this.http.delete(BASE_URL + `users/${userId}`).subscribe((value) => {
-        console.log(value);
+      this.http.delete(BASE_URL + `users/${userId}`).subscribe(() => {
         localStorage.removeItem('auth');
         this.logOut();
       });
     }
   }
 
-  updateUser(body: any) {
+  updateUser(body: LoginModel) {
     const info = localStorage.getItem('auth');
     if (info) {
       const userId = JSON.parse(info).id;
       this.http.put(BASE_URL + `users/${userId}`, body).subscribe((value) => {
-        console.log(value);
+        // console.log(value);
         localStorage.setItem('auth', JSON.stringify(value));
+        this.getUserName();
       });
     }
   }

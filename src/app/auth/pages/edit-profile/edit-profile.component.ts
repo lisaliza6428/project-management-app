@@ -41,7 +41,7 @@ export class EditProfileComponent implements OnInit {
     const auth = localStorage.getItem('auth');
     if (auth) {
       const info = JSON.parse(auth);
-      console.log(info);
+      // console.log(info);
       return info;
     }
   }

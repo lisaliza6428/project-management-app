@@ -4,11 +4,11 @@ import { AuthService } from '../../services/auth.service';
 import { TranslateLoader } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-delete-profile-modal',
-  templateUrl: './delete-profile-modal.component.html',
-  styleUrls: ['./delete-profile-modal.component.scss'],
+  selector: 'app-error409-modal',
+  templateUrl: './error409-modal.component.html',
+  styleUrls: ['./error409-modal.component.scss'],
 })
-export class DeleteProfileModalComponent {
+export class Error409ModalComponent {
 
   constructor(
     public authService: AuthService,
@@ -16,7 +16,4 @@ export class DeleteProfileModalComponent {
     public translate: TranslateLoader,
   ) { }
 
-  logOut() {
-    this.authService.deleteUser();
-  }
 }

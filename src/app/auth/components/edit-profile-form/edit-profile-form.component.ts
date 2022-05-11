@@ -57,8 +57,6 @@ export class EditProfileFormComponent implements OnInit {
   onSubmit() {
     if (this.formGroup.status === 'VALID') {
       this.authService.updateUser(this.formGroup.value);
-    } else {
-      // console.log('INVALID!');
     }
   }
 }
