@@ -12,6 +12,8 @@ import { TranslateLoader } from '@ngx-translate/core';
 })
 export class EditProfileFormComponent implements OnInit {
 
+  show = false;
+
   formGroup!: FormGroup;
 
   constructor(
@@ -59,4 +61,10 @@ export class EditProfileFormComponent implements OnInit {
       this.authService.updateUser(this.formGroup.value);
     }
   }
+
+  toggleVisibility(e: Event) {
+    this.show = !this.show;
+    e.preventDefault();
+  }
+
 }

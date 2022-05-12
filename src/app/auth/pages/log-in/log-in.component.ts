@@ -14,6 +14,8 @@ import { TranslateLoader } from '@ngx-translate/core';
 })
 export class LogInComponent implements OnInit {
 
+  show = false;
+
   formGroup!: FormGroup;
 
   constructor(
@@ -47,7 +49,12 @@ export class LogInComponent implements OnInit {
   onSubmit() {
     if (this.formGroup.status === 'VALID') {
       this.authService.logIn(this.formGroup.value);
-      this.formGroup.reset();
+      //this.formGroup.reset();
     }
+  }
+
+  toggleVisibility(e: Event) {
+    this.show = !this.show;
+    e.preventDefault();
   }
 }

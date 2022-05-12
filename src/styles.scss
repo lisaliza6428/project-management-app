@@ -13,6 +13,10 @@ body {
   margin: 0 auto;
 }
 
+input:-webkit-autofill{
+  -webkit-text-fill-color: blue !important;
+}
+
 //Styles for modal windows (must be global)
 
 .editProfileForm {
