@@ -10,12 +10,8 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ErrorModel } from '../models/models';
-import { MatDialog } from '@angular/material/dialog';
-import { Error401ModalComponent } from '../components/error401-modal/error401-modal.component';
-import { Error403ModalComponent } from '../components/error403-modal/error403-modal.component';
-import { Error409ModalComponent } from '../components/error409-modal/error409-modal.component';
-
-
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ModalComponent } from '../../core/components/modal/modal.component';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
@@ -30,25 +26,19 @@ export class ErrorInterceptor implements HttpInterceptor {
     request = request.clone({
       setHeaders: { 'Authorization': `Bearer ${token}` },
     });
-    // console.log(request);
     return next.handle(request).pipe(
       catchError((error: ErrorModel) => {
         switch (error.status) {
           case 401:
-            this.dialog.open(Error401ModalComponent, {
-              panelClass: 'confirmForm',
-            });
-            this.router.navigateByUrl('auth/log-in');
+            this.error401Action();
             break;
+
           case 403:
-            this.dialog.open(Error403ModalComponent, {
-              panelClass: 'confirmForm',
-            });
+            this.error403Action();
             break;
+
           case 409:
-            this.dialog.open(Error409ModalComponent, {
-              panelClass: 'confirmForm',
-            });
+            this.error409Action();
             break;
         }
         return throwError(error);
@@ -63,5 +53,40 @@ export class ErrorInterceptor implements HttpInterceptor {
       const token = JSON.parse(data).token;
       return token;
     }
+  }
+
+  error401Action() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {
+      name: 'error401',
+      message: 'modals.error401.message',
+      actionButtonText: 'modals.error401.confirm',
+      cancelButtonText: 'modals.error401.cancel',
+    };
+    this.dialog.open(ModalComponent, dialogConfig);
+    this.router.navigateByUrl('auth/log-in');
+  }
+
+  
+  error403Action() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {
+      name: 'error403',
+      message: 'modals.error403.message',
+      actionButtonText: 'modals.error403.confirm',
+      cancelButtonText: 'modals.error403.cancel',
+    };
+    this.dialog.open(ModalComponent, dialogConfig);
+  }
+
+  error409Action() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {
+      name: 'error409',
+      message: 'modals.error409.message',
+      actionButtonText: 'modals.error409.confirm',
+      cancelButtonText: 'modals.error409.cancel',
+    };
+    this.dialog.open(ModalComponent, dialogConfig);
   }
 }

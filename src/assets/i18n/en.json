@@ -46,16 +46,18 @@
     },
     "error401": {
       "message": "Your session has expired. You must be logged in to continue.",
-      "login": "Log In",
+      "confirm": "Log In",
       "cancel": "Cancel"
     },
     "error403": {
       "message": "Incorrect email or password",
-      "cancel": "OK"
+      "confirm": "OK",
+      "cancel": "Cancel"
     },
     "error409": {
       "message": "A user with this email already exists",
-      "cancel": "OK"
+      "confirm": "OK",
+      "cancel": "Cancel"
     }
   },
   "editProfilePage": {

@@ -46,15 +46,18 @@
     },
     "error401": {
       "message": "Ваша сессия истекла. Чтобы продолжить, необходимо войти",
-      "login": "Вход"
+      "confirm": "Вход",
+      "cancel": "Закрыть"
     },
     "error403": {
       "message": "Неправильные email или пароль",
-      "cancel": "OК"
+      "confirm": "OK",
+      "cancel": "Закрыть"
     },
     "error409": {
       "message": "Такой пользователь уже существует",
-      "cancel": "OК"
+      "confirm": "OK",
+      "cancel": "Закрыть"
     }
   },
   "editProfilePage": {

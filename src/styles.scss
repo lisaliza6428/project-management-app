@@ -19,17 +19,7 @@ input:-webkit-autofill{
 
 //Styles for modal windows (must be global)
 
-.editProfileForm {
-  mat-dialog-container {
-    background-color: white !important;
-    width: 460px !important;
-    height: auto !important;
-    border-radius: 10px !important;
-  }
-}
-
-.confirmForm {
   mat-dialog-container {
     background-color: #1d69e2 !important;
   }
-}
+
