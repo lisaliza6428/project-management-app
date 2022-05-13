@@ -1,0 +1,10 @@
+<button (click)="createBoard()" class="button-add">{{ 'boards.addBoardButton' | translate }}</button>
+<div class="boards-container">
+  <div class="board-card" *ngFor="let boards of boards" >
+    <h2>{{boards.title}}</h2>
+    <p>{{boards.description}}</p>
+    <button class="delete-card-button" (click)="openDialog(boards.id)">
+      {{ 'boards.delBoardButton' | translate }}
+    </button>
+  </div>
+</div>

@@ -20,7 +20,6 @@ export class BoardComponent implements OnInit {
 
   ngOnInit(): void {
     this.addList();
-
   }
 
   addList() {
@@ -38,6 +37,10 @@ export class BoardComponent implements OnInit {
 
   deleteList(){
     this.boardService.deleteList();
+  }
+
+  createListItem(){
+    this.boardService.createListItem();
   }
 
 }

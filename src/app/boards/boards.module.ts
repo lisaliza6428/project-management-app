@@ -7,12 +7,14 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FormsModule } from '@angular/forms';
 import { BoardComponent } from './components/board/board.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { BoardsPageComponent } from './pages/boards-page/boards-page.component';
 
 
 @NgModule({
   declarations: [
     ListComponent,
     BoardComponent,
+    BoardsPageComponent,
   ],
   imports: [
     CommonModule,

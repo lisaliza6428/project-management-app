@@ -55,6 +55,8 @@
   },
   "boards": {
     "addListButton": "+ Добавить карточку",
+    "addBoardButton": "+ Добавить доску",
+    "delBoardButton": "- Удалить доску",
     "list": {
       "enterNewItem": "Ввести текст",
       "addItemButton": "+ Добавить запись"

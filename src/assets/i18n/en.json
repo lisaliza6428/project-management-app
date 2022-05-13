@@ -54,6 +54,8 @@
     "deleteButton": "Delete profile"
   },
   "boards": {
+    "addBoardButton": "+ Add board",
+    "delBoardButton": "- Delete board",
     "addListButton": "+ Add List",
     "list": {
       "enterNewItem": "Enter a new item",
