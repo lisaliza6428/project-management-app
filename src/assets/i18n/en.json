@@ -52,5 +52,12 @@
     "password": "password:",
     "editButton": "Edit profile",
     "deleteButton": "Delete profile"
+  },
+  "boards": {
+    "addListButton": "+ Add List",
+    "list": {
+      "enterNewItem": "Enter a new item",
+      "addItemButton": "+ Add item"
+    }
   }
 }

@@ -52,5 +52,12 @@
     "password": "пароль:",
     "editButton": "Редактировать профиль",
     "deleteButton": "Удалить профиль"
+  },
+  "boards": {
+    "addListButton": "+ Добавить карточку",
+    "list": {
+      "enterNewItem": "Ввести текст",
+      "addItemButton": "+ Добавить запись"
+    }
   }
 }

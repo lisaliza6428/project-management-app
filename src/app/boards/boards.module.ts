@@ -6,6 +6,7 @@ import { BoardsRoutingModule } from './boards-routing.module';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FormsModule } from '@angular/forms';
 import { BoardComponent } from './components/board/board.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { BoardComponent } from './components/board/board.component';
     BoardsRoutingModule,
     DragDropModule,
     FormsModule,
+    TranslateModule,
   ],
 })
 export class BoardsModule { }
