@@ -60,6 +60,11 @@
     "list": {
       "enterNewItem": "Enter a new item",
       "addItemButton": "+ Add item"
+    },
+    "dialog": {
+      "delateBoard": "Are you sure you want to delete the board?",
+      "cancelButton": "Cancel",
+      "yesButton": "Yes"
     }
   }
 }

@@ -1,5 +1,11 @@
-<h1 mat-dialog-title>Dialog with elements</h1>
-<div mat-dialog-content>This dialog showcases the title, close, content and actions elements.</div>
-<div mat-dialog-actions>
-  <button mat-button color="primary" mat-dialog-close>Close</button>
+<div class=".confirmForm" id="123">
+  <h2 mat-dialog-title>{{ 'boards.dialog.delateBoard' | translate }}</h2>
+  <div mat-dialog-actions class="dialog__button">
+    <button mat-button mat-dialog-close >
+      {{ 'boards.dialog.cancelButton' | translate }}
+    </button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>
+      {{ 'boards.dialog.yesButton' | translate }}
+    </button>
+  </div>
 </div>

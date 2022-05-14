@@ -42,6 +42,7 @@
   background: #ccc;
   border-radius: 4px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .delete-card-button {
@@ -62,5 +63,26 @@
   }
   &:active {
     background-color: #06b;
+  }
+}
+
+.dialog__button {
+  display: flex;
+  justify-content: center;
+}
+
+.dialog__button > button {
+  width: 80px;
+  height: 40px;
+  margin: 10px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  background-color: #06b;
+  border-radius: 4px;
+  transition: 0.8s;
+  &:hover {
+    transform: scale(1.04);
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+    background-color: #08d;
   }
 }

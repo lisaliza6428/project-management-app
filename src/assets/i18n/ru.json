@@ -60,6 +60,11 @@
     "list": {
       "enterNewItem": "Ввести текст",
       "addItemButton": "+ Добавить запись"
+    },
+    "dialog": {
+      "delateBoard": "Вы уверены, что хотите удалить доску?",
+      "cancelButton": "Отмена",
+      "yesButton": "Да"
     }
   }
 }

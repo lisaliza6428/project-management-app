@@ -30,9 +30,13 @@ export class BoardsService {
 
   createBoard(){
     this.http.post(BASE_URL + 'boards', {
-      'title': 'Board',
-      'description': 'Main board'
-    });
+      'title': 'New board',
+      'description': 'description'
+    }).subscribe();
+  }
+
+  deleteBoard(id: string){
+    this.http.delete(BASE_URL + 'boards/' + id).subscribe();
   }
 
   createList(){

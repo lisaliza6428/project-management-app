@@ -1,10 +1,8 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
+/* eslint-disable import/named */
+/* eslint-disable @typescript-eslint/keyword-spacing */
 /* eslint-disable @angular-eslint/component-class-suffix */
 /* eslint-disable @angular-eslint/component-selector */
-/* eslint-disable import/named */
-/* eslint-disable @angular-eslint/no-empty-lifecycle-method */
-/* eslint-disable @typescript-eslint/no-empty-function */
-/* eslint-disable @typescript-eslint/no-useless-constructor */
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { BoardsModel } from '../../models/boards-models';
@@ -22,26 +20,45 @@ export class BoardsPageComponent implements OnInit {
   constructor(public boardService: BoardsService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.getBoards();
+  }
+
+  public getBoards(){
     this.boardService.getBoards$().subscribe((data: BoardsModel[]) => {
       this.boards = data;
-      console.log(this.boards);
+//      console.log(this.boards);
     });
   }
 
   public createBoard(){
     this.boardService.createBoard();
+    this.getBoards();
   }
 
   public openDialog(id: string){
+    const dialogRef = this.dialog.open(DelateBoardDialog);
+    dialogRef.afterClosed().subscribe(result => {
+      if(result) {
+        this.boardService.deleteBoard(id);
+        this.getBoards();
+      }
+    });
+  }
+
+  public goToBoardsEdit(id: string){
     console.log(id);
-    this.dialog.open(DelateBoardDialog);
   }
 }
 
 @Component({
   selector: 'delate-board-dialog',
   templateUrl: './delate-board-dialog.html',
+  styleUrls: ['./boards-page.component.scss'],
 })
-export class DelateBoardDialog {}
+export class DelateBoardDialog {
+
+  constructor(public dialog: MatDialog){}
+
+}
 
 

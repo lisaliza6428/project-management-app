@@ -7,7 +7,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FormsModule } from '@angular/forms';
 import { BoardComponent } from './components/board/board.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { BoardsPageComponent } from './pages/boards-page/boards-page.component';
+import { BoardsPageComponent, DelateBoardDialog } from './pages/boards-page/boards-page.component';
+import { NgMaterialModule } from '../ng-material/ng-material/ng-material.module';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { BoardsPageComponent } from './pages/boards-page/boards-page.component';
     ListComponent,
     BoardComponent,
     BoardsPageComponent,
+    DelateBoardDialog,
   ],
   imports: [
     CommonModule,
@@ -22,6 +24,7 @@ import { BoardsPageComponent } from './pages/boards-page/boards-page.component';
     DragDropModule,
     FormsModule,
     TranslateModule,
+    NgMaterialModule,
   ],
 })
 export class BoardsModule { }
