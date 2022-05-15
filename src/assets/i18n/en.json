@@ -55,7 +55,7 @@
   },
   "boards": {
     "addBoardButton": "+ Add board",
-    "delBoardButton": "- Delete board",
+    "delBoardButton": "Delete board",
     "addListButton": "+ Add List",
     "list": {
       "enterNewItem": "Enter a new item",
@@ -65,6 +65,9 @@
       "delateBoard": "Are you sure you want to delete the board?",
       "cancelButton": "Cancel",
       "yesButton": "Yes"
+    },
+    "tooltips": {
+      "openBoard": "Open board"
     }
   }
 }

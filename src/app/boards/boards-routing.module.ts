@@ -10,7 +10,7 @@ const routes: Routes = [
     component: BoardsPageComponent,
   },
   {
-    path: 'edit',
+    path: 'edit/:id',
     component: BoardComponent,
   },
 ];

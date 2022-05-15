@@ -1,13 +1,14 @@
 <button (click)="createBoard()" class="button-add">{{ 'boards.addBoardButton' | translate }}</button>
 <div class="boards-container">
   <div
-      id={{boards.id}}
-      class="board-card"
-      *ngFor="let boards of boards"
-      (click)="goToBoardsEdit(boards.id)"
+    id={{boards.id}}
+    class="board-card" *ngFor="let boards of boards"
+    matTooltip="{{ 'boards.tooltips.openBoard' | translate }}"
     >
-    <h2>{{boards.title}}</h2>
-    <p>{{boards.description}}</p>
+    <div (click)="goToBoardsEdit(boards.id)" class="board-card__title" >
+      <h2>{{boards.title}}</h2>
+      <p>{{boards.description}}</p>
+    </div>
     <button class="delete-card-button" (click)="openDialog(boards.id)">
       {{ 'boards.delBoardButton' | translate }}
     </button>

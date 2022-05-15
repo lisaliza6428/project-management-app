@@ -22,10 +22,8 @@ export class BoardsService {
     return this.http.get(BASE_URL + 'boards');
   }
 
-  getLists(){
-    this.http.get(this.mainBoardURL + 'columns').subscribe((value) => {
-      console.log(value);
-    });
+  getLists$(id: string): Observable<any>{
+    return this.http.get(BASE_URL + `boards/${id}/columns`);
   }
 
   createBoard(){
@@ -39,8 +37,8 @@ export class BoardsService {
     this.http.delete(BASE_URL + 'boards/' + id).subscribe();
   }
 
-  createList(){
-    this.http.post(this.mainBoardURL + 'columns', { 'title': 'Done', 'order': 1 })
+  createList(id: string, order: number){
+    this.http.post(BASE_URL + `boards/${id}/columns`, { 'title': 'Done', 'order': order })
       .subscribe(value => {
         console.log(value);
       });

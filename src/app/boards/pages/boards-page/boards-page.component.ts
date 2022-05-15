@@ -5,6 +5,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { BoardsModel } from '../../models/boards-models';
 import { BoardsService } from '../../services/boards.service';
 
@@ -17,7 +18,11 @@ export class BoardsPageComponent implements OnInit {
 
   public boards: BoardsModel[] | undefined;
 
-  constructor(public boardService: BoardsService, public dialog: MatDialog) { }
+  constructor(
+    public boardService: BoardsService,
+    public dialog: MatDialog,
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
     this.getBoards();
@@ -46,13 +51,13 @@ export class BoardsPageComponent implements OnInit {
   }
 
   public goToBoardsEdit(id: string){
-    console.log(id);
+    this.router.navigate([`boards/edit/${id}`]);
   }
 }
 
 @Component({
   selector: 'delate-board-dialog',
-  templateUrl: './delate-board-dialog.html',
+  templateUrl: './dialog-elements-delate-board.html',
   styleUrls: ['./boards-page.component.scss'],
 })
 export class DelateBoardDialog {

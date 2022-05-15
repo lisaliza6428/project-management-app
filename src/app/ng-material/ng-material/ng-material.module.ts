@@ -7,7 +7,7 @@ import { EditProfileFormComponent } from '../../auth/components/edit-profile-for
 import { LogOutModalComponent } from '../../auth/components/log-out-modal/log-out-modal.component';
 import { DeleteProfileModalComponent } from '../../auth/components/delete-profile-modal/delete-profile-modal.component';
 import { TranslateModule } from '@ngx-translate/core';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -23,10 +23,12 @@ import { TranslateModule } from '@ngx-translate/core';
     FormsModule,
     ReactiveFormsModule,
     TranslateModule,
+    MatTooltipModule,
   ],
   exports: [
     MatDialogModule,
     MatButtonModule,
+    MatTooltipModule,
   ],
 })
 export class NgMaterialModule { }
