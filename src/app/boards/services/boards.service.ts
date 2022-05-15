@@ -5,7 +5,7 @@
 import { Injectable } from '@angular/core';
 import { BASE_URL } from '../../shared/consts';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { catchError, debounceTime, Observable, retry } from 'rxjs';
 
 
 @Injectable({
@@ -17,19 +17,25 @@ export class BoardsService {
 
   constructor(public http: HttpClient) {}
 
-
   public getBoards$(): Observable<any>{
-    return this.http.get(BASE_URL + 'boards');
+    return this.http.get(BASE_URL + 'boards').pipe(
+      retry(2),
+      debounceTime(500),
+      catchError(error => {
+        console.log('[ERROR]', error);
+        return error;
+      })
+    );
   }
 
   getLists$(id: string): Observable<any>{
     return this.http.get(BASE_URL + `boards/${id}/columns`);
   }
 
-  createBoard(){
+  createBoard(title: string, description: string){
     this.http.post(BASE_URL + 'boards', {
-      'title': 'New board',
-      'description': 'description'
+      'title': title,
+      'description': description,
     }).subscribe();
   }
 

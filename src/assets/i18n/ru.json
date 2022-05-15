@@ -64,7 +64,9 @@
     "dialog": {
       "delateBoard": "Вы уверены, что хотите удалить доску?",
       "cancelButton": "Отмена",
-      "yesButton": "Да"
+      "yesButton": "Да",
+      "createBoardName": "Название доски",
+      "createBoardDescription": "Описание"
     },
     "tooltips": {
       "openBoard": "Открыть доску"

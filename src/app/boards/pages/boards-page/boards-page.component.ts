@@ -1,13 +1,20 @@
+/* eslint-disable @typescript-eslint/indent */
 /* eslint-disable import/named */
 /* eslint-disable @typescript-eslint/keyword-spacing */
 /* eslint-disable @angular-eslint/component-class-suffix */
 /* eslint-disable @angular-eslint/component-selector */
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { BoardsModel } from '../../models/boards-models';
 import { BoardsService } from '../../services/boards.service';
+
+export interface DialogData {
+  title: string;
+  description: string;
+}
 
 @Component({
   selector: 'app-boards-page',
@@ -16,7 +23,7 @@ import { BoardsService } from '../../services/boards.service';
 })
 export class BoardsPageComponent implements OnInit {
 
-  public boards: BoardsModel[] | undefined;
+  public boards$: Observable<BoardsModel[]> = this.boardService.getBoards$();
 
   constructor(
     public boardService: BoardsService,
@@ -25,22 +32,41 @@ export class BoardsPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getBoards();
+    this.boards$.subscribe();
+  //  this.getBoards();
   }
 
   public getBoards(){
-    this.boardService.getBoards$().subscribe((data: BoardsModel[]) => {
-      this.boards = data;
-//      console.log(this.boards);
+    this.boards$ = this.boardService.getBoards$();
+
+//     this.boardService.getBoards$().subscribe((data: BoardsModel[]) => {
+//       this.boards = data;
+// //    console.log(this.boards);
+//     });
+  }
+
+  public openDialogCreateBoard(){
+    const boardTitle: string = '';
+    const boardDescription: string = '';
+    const dialogRef = this.dialog.open(DialogAddBoard, {
+      width: '300px',
+      data: {
+        title: boardTitle,
+        description: boardDescription,
+      },
+    });
+
+    dialogRef.afterClosed().subscribe(board => {
+      if(!board) return;
+      if(board.description === '') board.description = 'description';
+      if(board.title !== '') {
+        this.boardService.createBoard(board.title, board.description);
+        this.getBoards();
+      }
     });
   }
 
-  public createBoard(){
-    this.boardService.createBoard();
-    this.getBoards();
-  }
-
-  public openDialog(id: string){
+  public openDialogDeleteBoard(id: string){
     const dialogRef = this.dialog.open(DelateBoardDialog);
     dialogRef.afterClosed().subscribe(result => {
       if(result) {
@@ -57,13 +83,27 @@ export class BoardsPageComponent implements OnInit {
 
 @Component({
   selector: 'delate-board-dialog',
-  templateUrl: './dialog-elements-delate-board.html',
+  templateUrl: '././dialog/dialog-elements-delate-board.html',
   styleUrls: ['./boards-page.component.scss'],
 })
 export class DelateBoardDialog {
-
   constructor(public dialog: MatDialog){}
+}
 
+@Component({
+  selector: 'dialog-add-board',
+  templateUrl: './dialog/dialog-elements-add-board.html',
+  styleUrls: ['./boards-page.component.scss'],
+})
+export class DialogAddBoard {
+  constructor(
+    public dialogRef: MatDialogRef<DialogAddBoard>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,
+  ) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 }
 
 

@@ -89,3 +89,26 @@
     background-color: #08d;
   }
 }
+
+.confirmForm > div > input {
+  width: 250px;
+  height: 30px;
+  margin: 0;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  &:focus {
+    outline: 0;
+  }
+
+}
+
+.confirmForm > div > p {
+  margin: 0;
+  font-size: 18px;
+}
+
+mat-spinner {
+  margin: 20px auto;
+}
