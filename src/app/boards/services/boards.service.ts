@@ -28,10 +28,6 @@ export class BoardsService {
     );
   }
 
-  getLists$(id: string): Observable<any>{
-    return this.http.get(BASE_URL + `boards/${id}/columns`);
-  }
-
   createBoard(title: string, description: string){
     this.http.post(BASE_URL + 'boards', {
       'title': title,
@@ -41,6 +37,10 @@ export class BoardsService {
 
   deleteBoard(id: string){
     this.http.delete(BASE_URL + 'boards/' + id).subscribe();
+  }
+
+  getLists$(id: string): Observable<any>{
+    return this.http.get(BASE_URL + `boards/${id}/columns`);
   }
 
   createList(id: string, order: number){

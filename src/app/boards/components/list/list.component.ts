@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/keyword-spacing */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable import/named */
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { NgForm } from '@angular/forms';
 
@@ -12,6 +12,8 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent {
+
+  @Input() title = '';
 
   items: string[] = [];
 

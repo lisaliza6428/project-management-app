@@ -2,5 +2,7 @@
 <button (click)="deleteList()" class="button-add">delete List</button>
 <button (click)="createListItem()" class="button-add">createItem</button>
 <div class="list-container" cdkDropListGroup>
-    <app-list *ngFor="let list of lists"></app-list>
+    <div *ngFor="let list of lists">
+      <app-list [title]="list.title"></app-list>
+    </div>
 </div>
