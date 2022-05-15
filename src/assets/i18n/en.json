@@ -66,7 +66,8 @@
       "cancelButton": "Cancel",
       "yesButton": "Yes",
       "createBoardName": "Board name",
-      "createBoardDescription": "Board description"
+      "createBoardDescription": "Board description",
+      "createListName": "Card name"
     },
     "tooltips": {
       "openBoard": "Open board"

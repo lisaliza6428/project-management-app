@@ -1,0 +1,14 @@
+<div class="confirmForm">
+  <div mat-dialog-content>
+    <p mat-dialog-title>{{ 'boards.dialog.createListName' | translate }}</p>
+    <input matInput [(ngModel)]="data.title" autofocus/>
+  </div>
+  <div mat-dialog-actions class="dialog__button">
+    <button mat-button mat-dialog-close >
+      {{ 'boards.dialog.cancelButton' | translate }}
+    </button>
+    <button mat-button [mat-dialog-close]="data">
+      {{ 'boards.dialog.yesButton' | translate }}
+    </button>
+  </div>
+</div>

@@ -1,8 +1,11 @@
-<button (click)="createList()" class="button-add">{{ 'boards.addListButton' | translate }}</button>
-<button (click)="deleteList()" class="button-add">delete List</button>
+<button (click)="openDialogCreateList()" class="button-add">{{ 'boards.addListButton' | translate }}</button>
 <button (click)="createListItem()" class="button-add">createItem</button>
 <div class="list-container" cdkDropListGroup>
     <div *ngFor="let list of lists">
-      <app-list [title]="list.title"></app-list>
+      <app-list 
+        [title]="list.title" 
+        [id]="list.id"
+        (newItemEvent)="deleteList($event)"
+      ></app-list>
     </div>
 </div>

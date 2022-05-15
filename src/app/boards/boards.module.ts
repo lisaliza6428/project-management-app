@@ -9,6 +9,7 @@ import { BoardComponent } from './components/board/board.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { BoardsPageComponent, DelateBoardDialog, DialogAddBoard } from './pages/boards-page/boards-page.component';
 import { NgMaterialModule } from '../ng-material/ng-material/ng-material.module';
+import { DialogAddList } from './components/dialog-add-title/dialog-add-title.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { NgMaterialModule } from '../ng-material/ng-material/ng-material.module'
     BoardsPageComponent,
     DelateBoardDialog,
     DialogAddBoard,
+    DialogAddList,
   ],
   imports: [
     CommonModule,

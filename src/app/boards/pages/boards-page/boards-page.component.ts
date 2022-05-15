@@ -8,13 +8,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { BoardsModel } from '../../models/boards-models';
+import { BoardsModel, DialogData } from '../../models/boards-models';
 import { BoardsService } from '../../services/boards.service';
-
-export interface DialogData {
-  title: string;
-  description: string;
-}
 
 @Component({
   selector: 'app-boards-page',
@@ -33,16 +28,10 @@ export class BoardsPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.boards$.subscribe();
-  //  this.getBoards();
   }
 
   public getBoards(){
     this.boards$ = this.boardService.getBoards$();
-
-//     this.boardService.getBoards$().subscribe((data: BoardsModel[]) => {
-//       this.boards = data;
-// //    console.log(this.boards);
-//     });
   }
 
   public openDialogCreateBoard(){

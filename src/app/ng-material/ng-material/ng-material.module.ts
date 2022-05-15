@@ -8,7 +8,8 @@ import { LogOutModalComponent } from '../../auth/components/log-out-modal/log-ou
 import { DeleteProfileModalComponent } from '../../auth/components/delete-profile-modal/delete-profile-modal.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -26,12 +27,14 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     TranslateModule,
     MatTooltipModule,
     MatProgressSpinnerModule,
+    MatIconModule,
   ],
   exports: [
     MatDialogModule,
     MatButtonModule,
     MatTooltipModule,
     MatProgressSpinnerModule,
+    MatIconModule,
   ],
 })
 export class NgMaterialModule { }

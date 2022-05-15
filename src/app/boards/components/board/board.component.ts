@@ -1,9 +1,14 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
+/* eslint-disable @typescript-eslint/indent */
+/* eslint-disable @typescript-eslint/keyword-spacing */
 // eslint-disable-next-line import/named
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateLoader } from '@ngx-translate/core';
+import { ListModel } from '../../models/boards-models';
 import { BoardsService } from '../../services/boards.service';
-import { ListComponent } from '../list/list.component';
+import { DialogAddList } from '../dialog-add-title/dialog-add-title.component';
 
 @Component({
   selector: 'app-board',
@@ -12,12 +17,13 @@ import { ListComponent } from '../list/list.component';
 })
 export class BoardComponent implements OnInit {
 
-  public lists: ListComponent[] = [];
+  public lists: ListModel[] = [];
 
   public boardID!: string;
 
   constructor(
     public translate: TranslateLoader,
+    public dialog: MatDialog,
     public boardService: BoardsService,
     private route: ActivatedRoute,
   ){}
@@ -27,22 +33,42 @@ export class BoardComponent implements OnInit {
     this.getLists();
   }
 
-  getLists(){
+  public getLists(){
     this.boardService.getLists$(this.boardID).subscribe(lists => {
       this.lists = lists;
-      console.log(this.lists);
+//      console.log(this.lists);
     });
   }
 
-  createList(){
+  public openDialogCreateList(){
+    const titleList: string = '';
+    const dialogRef = this.dialog.open(DialogAddList, {
+      width: '300px',
+      data: {
+        title: titleList,
+      },
+    });
+
+    dialogRef.afterClosed().subscribe(data => {
+      if(!data) return;
+      if(data.title !== '') {
+        this.createList(data.title);
+      }
+    });
+  }
+
+  public createList(title: string){
     const id = this.boardID;
-    const order = this.lists.length + 1;
-    this.boardService.createList(id, order);
+    let order;
+    this.lists.length === 0 ? order = 1 : 
+      order = this.lists.sort((a, b) => b.order - a.order)[0].order + 1;
+    this.boardService.createList(id, order, title);
     this.getLists();
   }
 
-  deleteList(){
-    this.boardService.deleteList();
+  public async deleteList(id: string){
+    this.boardService.deleteList(this.boardID, id);
+    this.lists = this.lists.filter(item => item.id !== id);
   }
 
   createListItem(){

@@ -43,15 +43,15 @@ export class BoardsService {
     return this.http.get(BASE_URL + `boards/${id}/columns`);
   }
 
-  createList(id: string, order: number){
-    this.http.post(BASE_URL + `boards/${id}/columns`, { 'title': 'Done', 'order': order })
-      .subscribe(value => {
-        console.log(value);
-      });
+  createList(id: string, order: number, title: string){
+    this.http.post(
+      BASE_URL + `boards/${id}/columns`, 
+      { 'title': title, 'order': order }
+    ).subscribe();
   }
 
-  deleteList(){
-    this.http.delete(this.mainBoardURL + 'columns/dfcedcf3-af90-43aa-a351-f70b4eeba7be').subscribe();
+  deleteList(boardID: string, id: string,){
+    this.http.delete(BASE_URL + `boards/${boardID}/columns/${id}`).subscribe();
   }
 
   createListItem(){

@@ -3,3 +3,14 @@ export interface BoardsModel {
   title: string,
   description: string,
 }
+
+export interface DialogData {
+  title: string;
+  description: string;
+}
+
+export interface ListModel {
+  id: string,
+  title: string,
+  order: number,
+}

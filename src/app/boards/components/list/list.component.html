@@ -1,5 +1,13 @@
 <div class="list-container">
-  <p>{{title}}</p>
+  <div class="list-title">
+    <p>{{title}}</p>
+    <mat-icon 
+      aria-hidden="false" 
+      aria-label="Example home icon"
+      id="{{id}}"
+      (click)="getListID(id)"
+    >clear</mat-icon>
+  </div>
   <div cdkDropList [cdkDropListData]="items" (cdkDropListDropped)="drop($event)" class="list">
     <div *ngFor="let item of items" cdkDrag>{{item}}</div>
   </div>
