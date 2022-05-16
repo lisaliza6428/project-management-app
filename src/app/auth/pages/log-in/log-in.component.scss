@@ -41,6 +41,27 @@
     margin: 7px 0 3px 0;
   }
 
+  .form__input-wrap {
+    position: relative;
+    button {
+      position: absolute;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      width: 30px;
+      height: 30px;
+      border: none;
+      cursor: pointer;
+      right: 5px;
+      top: 10px;
+      &.show {
+        background-image: url("../../../../assets/svg/eye-show.svg");
+      }
+      &.hide {
+        background-image: url("../../../../assets/svg/eye-hide.svg");
+      }
+    }
+  }
+
   .form__field-input {
     width: 100%;
     height: 45px;

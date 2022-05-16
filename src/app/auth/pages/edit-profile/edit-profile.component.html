@@ -3,7 +3,6 @@
       <h3 class="edit-page__title">{{'editProfilePage.title' | translate}}</h3>
       <div (click)="getAuthData()">{{'editProfilePage.name' | translate}} {{ auth.name }}</div>
       <div>{{'editProfilePage.email' | translate}} {{ auth.login }}</div>
-      <div>{{'editProfilePage.password' | translate}} **********</div>
       <button class="edit-page__button"  (click)="openEditForm()">{{'editProfilePage.editButton' | translate}}</button>
       <button class="edit-page__button" (click)="openConfirmDialog()">{{'editProfilePage.deleteButton' | translate}}</button>
    </div>

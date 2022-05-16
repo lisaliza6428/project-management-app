@@ -15,7 +15,11 @@
     </div>
 
     <h3 class="form__field-title">{{ 'form.password.password' | translate }}</h3>
-    <input class="form__field-input" formControlName="password" name="password" id="password" type="text">
+    <div class="form__input-wrap">
+      <input class="form__field-input password" formControlName="password" name="password" id="password" [type]="show ? 'text' : 'password'">
+      <button (click)="toggleVisibility($event)" [class]="show? 'show' : 'hide'"></button>
+    </div>
+
     <div class="error-container">
       <div *ngIf="_password.invalid && (_password.touched || _password.dirty || _password.untouched)">
         <span class="message" *ngIf="_password.errors?.['required']">{{ 'form.password.enter' | translate }}</span>
@@ -34,3 +38,4 @@
     <button class="form__submit" [disabled]="formGroup.invalid" type="submit">{{ 'form.loginButton' | translate }}</button>
   </form>
 </div>
+

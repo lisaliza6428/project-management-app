@@ -13,6 +13,8 @@ import { TranslateLoader } from '@ngx-translate/core';
 })
 export class SignUpComponent implements OnInit {
 
+  show = false;
+
   formGroup!: FormGroup;
 
   constructor(
@@ -59,5 +61,10 @@ export class SignUpComponent implements OnInit {
     if (this.formGroup.status === 'VALID') {
       this.authService.createNewUser(this.formGroup.value);
     }
+  }
+
+  toggleVisibility(e: Event) {
+    this.show = !this.show;
+    e.preventDefault();
   }
 }

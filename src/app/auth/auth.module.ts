@@ -9,7 +9,6 @@ import { EditProfileComponent } from './pages/edit-profile/edit-profile.componen
 import { TranslateModule } from '@ngx-translate/core';
 
 
-
 @NgModule({
   declarations: [
     LogInComponent,
