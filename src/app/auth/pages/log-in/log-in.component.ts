@@ -6,12 +6,15 @@ import { validateUpperCase, validateLowerCase, validateNumbers, validateSpecial 
 import { TranslateLoader } from '@ngx-translate/core';
 
 
+
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
   styleUrls: ['./log-in.component.scss'],
 })
 export class LogInComponent implements OnInit {
+
+  show = false;
 
   formGroup!: FormGroup;
 
@@ -46,7 +49,12 @@ export class LogInComponent implements OnInit {
   onSubmit() {
     if (this.formGroup.status === 'VALID') {
       this.authService.logIn(this.formGroup.value);
+      //this.formGroup.reset();
     }
   }
 
+  toggleVisibility(e: Event) {
+    this.show = !this.show;
+    e.preventDefault();
+  }
 }

@@ -13,23 +13,17 @@ body {
   margin: 0 auto;
 }
 
+input:-webkit-autofill{
+  -webkit-text-fill-color: blue !important;
+}
+
 //Styles for modal windows (must be global)
 
-.editProfileForm {
-  mat-dialog-container {
-    background-color: white !important;
-    width: 460px !important;
-    height: auto !important;
-    border-radius: 10px !important;
-  }
-}
-
-.confirmForm {
-  mat-dialog-container {
+ mat-dialog-container {
     background-color: #1d69e2 !important;
   }
-}
 
 .mat-dialog-container {
   background-color: #06b;
 }
+

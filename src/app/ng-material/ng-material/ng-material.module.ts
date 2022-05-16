@@ -10,13 +10,12 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
+import { ModalComponent } from '../../core/components/modal/modal.component';
 
 @NgModule({
   declarations: [
-    LogOutModalComponent,
     EditProfileFormComponent,
-    DeleteProfileModalComponent,
-
+    ModalComponent,
   ],
   imports: [
     CommonModule,

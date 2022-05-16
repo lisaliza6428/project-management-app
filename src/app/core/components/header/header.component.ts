@@ -2,9 +2,9 @@
 
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../auth/services/auth.service';
-import { MatDialog } from '@angular/material/dialog';
-import { LogOutModalComponent } from '../../../auth/components/log-out-modal/log-out-modal.component';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { TranslateService, TranslateLoader } from '@ngx-translate/core';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-header',
@@ -29,9 +29,15 @@ export class HeaderComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(LogOutModalComponent, {
-      panelClass: 'confirmForm',
-    });
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.data = {
+      name: 'logout',
+      message: 'modals.logout.message',
+      actionButtonText: 'modals.logout.confirm',
+      cancelButtonText: 'modals.logout.cancel',
+    };
+    this.dialog.open(ModalComponent, dialogConfig);
   }
 
   onSelected(value: string) {

@@ -1,11 +1,11 @@
 /* eslint-disable @angular-eslint/no-empty-lifecycle-method */
 /* eslint-disable import/named */
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { EditProfileFormComponent } from '../../components/edit-profile-form/edit-profile-form.component';
-import { DeleteProfileModalComponent } from '../../components/delete-profile-modal/delete-profile-modal.component';
 import { AuthDataModel } from '../../models/models';
 import { TranslateLoader } from '@ngx-translate/core';
+import { ModalComponent } from '../../../core/components/modal/modal.component';
 
 
 @Component({
@@ -32,16 +32,21 @@ export class EditProfileComponent implements OnInit {
   }
 
   openConfirmDialog() {
-    this.dialog.open(DeleteProfileModalComponent, {
-      panelClass: 'confirmForm',
-    });
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.data = {
+      name: 'deleteProfile',
+      message: 'modals.deleteProfile.message',
+      actionButtonText: 'modals.deleteProfile.confirm',
+      cancelButtonText: 'modals.deleteProfile.cancel',
+    };
+    this.dialog.open(ModalComponent, dialogConfig);
   }
 
   getAuthData() {
     const auth = localStorage.getItem('auth');
     if (auth) {
       const info = JSON.parse(auth);
-      console.log(info);
       return info;
     }
   }
