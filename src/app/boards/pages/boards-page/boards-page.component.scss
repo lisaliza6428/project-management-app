@@ -1,0 +1,114 @@
+
+.button-add {
+  max-width: 200px;
+  margin: 10px;
+  padding: 0 10px;
+  background-color: rgb(221, 0, 111);
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 8px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 40px;
+  text-align: center;
+  transition: 0.8s;
+}
+
+.button-add:hover {
+  transform: scale(1.04);
+}
+
+.button-add:active {
+  background-color: rgb(221, 0, 147);
+}
+
+.boards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
+  grid-gap: 20px;
+  gap: 20px;
+  padding: 10px;
+}
+
+.board-card {
+  padding: 10px;
+  max-width: 100%;
+  border: solid 1px #ccc;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+  min-height: 60px;
+  display: block;
+  background: #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.board-card__title{
+  cursor: pointer;
+}
+
+.delete-card-button {
+  background-color: #08d;
+  border-radius: 8px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 14px;
+  height: 25px;
+  text-align: center;
+  width: 100%;
+  transition: 0.8s;
+  &:hover {
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+    background-color: #07d;
+  }
+  &:active {
+    background-color: #06b;
+  }
+}
+
+.dialog__button {
+  display: flex;
+  justify-content: center;
+}
+
+.dialog__button > button {
+  width: 80px;
+  height: 40px;
+  margin: 10px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  background-color: #06b;
+  border-radius: 4px;
+  transition: 0.8s;
+  &:hover {
+    transform: scale(1.04);
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+    background-color: #08d;
+  }
+}
+
+.confirmForm > div > input {
+  width: 250px;
+  height: 30px;
+  margin: 0;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  &:focus {
+    outline: 0;
+  }
+
+}
+
+.confirmForm > div > p {
+  margin: 0;
+  font-size: 18px;
+}
+
+mat-spinner {
+  margin: 20px auto;
+}

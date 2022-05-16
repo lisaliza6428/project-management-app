@@ -1,4 +1,13 @@
 <div class="list-container">
+  <div class="list-title">
+    <p>{{title}}</p>
+    <mat-icon 
+      aria-hidden="false" 
+      aria-label="Example home icon"
+      id="{{id}}"
+      (click)="getListID(id)"
+    >clear</mat-icon>
+  </div>
   <div cdkDropList [cdkDropListData]="items" (cdkDropListDropped)="drop($event)" class="list">
     <div *ngFor="let item of items" cdkDrag>{{item}}</div>
   </div>
@@ -12,8 +21,8 @@
         placeholder=" "
       >
       <div class="cut"></div>
-      <label for="add-item" class="placeholder">Enter a new item</label>
+      <label for="add-item" class="placeholder">{{ 'boards.list.enterNewItem' | translate }}</label>
     </div>
-      <button type="submit" class="item-button">Add Item</button>
+      <button type="submit" class="item-button">{{ 'boards.list.addItemButton' | translate }}</button>
   </form>
 </div>

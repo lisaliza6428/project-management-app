@@ -66,5 +66,25 @@
     "email": "email:",
     "editButton": "Редактировать профиль",
     "deleteButton": "Удалить профиль"
+  },
+  "boards": {
+    "addListButton": "+ Добавить карточку",
+    "addBoardButton": "+ Добавить доску",
+    "delBoardButton": "Удалить доску",
+    "list": {
+      "enterNewItem": "Ввести текст",
+      "addItemButton": "+ Добавить запись"
+    },
+    "dialog": {
+      "delateBoard": "Вы уверены, что хотите удалить доску?",
+      "cancelButton": "Отмена",
+      "yesButton": "Да",
+      "createBoardName": "Название доски",
+      "createBoardDescription": "Описание",
+      "createListName": "Название карточки"
+    },
+    "tooltips": {
+      "openBoard": "Открыть доску"
+    }
   }
 }

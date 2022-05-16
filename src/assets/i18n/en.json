@@ -66,5 +66,25 @@
     "email": "email:",
     "editButton": "Edit profile",
     "deleteButton": "Delete profile"
+  },
+  "boards": {
+    "addBoardButton": "+ Add board",
+    "delBoardButton": "Delete board",
+    "addListButton": "+ Add List",
+    "list": {
+      "enterNewItem": "Enter a new item",
+      "addItemButton": "+ Add item"
+    },
+    "dialog": {
+      "delateBoard": "Are you sure you want to delete the board?",
+      "cancelButton": "Cancel",
+      "yesButton": "Yes",
+      "createBoardName": "Board name",
+      "createBoardDescription": "Board description",
+      "createListName": "Card name"
+    },
+    "tooltips": {
+      "openBoard": "Open board"
+    }
   }
 }

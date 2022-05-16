@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/indent */
 /* eslint-disable @typescript-eslint/keyword-spacing */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable import/named */
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { NgForm } from '@angular/forms';
 
@@ -13,7 +14,13 @@ import { NgForm } from '@angular/forms';
 })
 export class ListComponent {
 
-  items: string[] = [];
+  @Input() title = '';
+
+  @Input() id = '';
+
+  @Output() newItemEvent = new EventEmitter<string>();
+
+  items: string[] = []; //['item1', 'item2'];
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
@@ -21,20 +28,25 @@ export class ListComponent {
         event.container.data,
         event.previousIndex,
         event.currentIndex);
+//        console.log(this.items);
     } else {
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex);
+//        console.log(this.items);
     }
   }
 
-  onSubmit(newItemForm: NgForm) {
+  public onSubmit(newItemForm: NgForm) {
     if(!newItemForm.value.newItem) return;
     this.items.push(newItemForm.value.newItem);
     newItemForm.reset();
   }
 
+  getListID(id: string) {
+    this.newItemEvent.emit(id);
+  }
 
 }

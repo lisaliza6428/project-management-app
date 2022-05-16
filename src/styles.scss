@@ -19,7 +19,11 @@ input:-webkit-autofill{
 
 //Styles for modal windows (must be global)
 
-  mat-dialog-container {
+ mat-dialog-container {
     background-color: #1d69e2 !important;
   }
+
+.mat-dialog-container {
+  background-color: #06b;
+}
 
