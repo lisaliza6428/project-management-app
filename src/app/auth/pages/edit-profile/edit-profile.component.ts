@@ -1,4 +1,3 @@
-/* eslint-disable @angular-eslint/no-empty-lifecycle-method */
 /* eslint-disable import/named */
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
@@ -7,7 +6,6 @@ import { AuthDataModel } from '../../models/models';
 import { TranslateLoader } from '@ngx-translate/core';
 import { ModalComponent } from '../../../core/components/modal/modal.component';
 import { AuthService } from '../../services/auth.service';
-
 
 @Component({
   selector: 'app-edit-profile',
@@ -27,7 +25,7 @@ export class EditProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.authService.userInfoChange.subscribe(value => {this.authData = value;});
+    this.authService.userInfoChange.subscribe(value => { this.authData = value; });
   }
 
   openEditForm() {

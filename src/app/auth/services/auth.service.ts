@@ -22,7 +22,6 @@ export class AuthService {
 
   userInfoChange: Subject<AuthDataModel> = new Subject<AuthDataModel>();
 
-
   constructor(
     public http: HttpClient,
     public router: Router,
@@ -60,7 +59,6 @@ export class AuthService {
     this.http.post(BASE_URL + 'signup', body).subscribe((value) => {
       localStorage.setItem('auth', JSON.stringify(value));
       this.router.navigate(['auth/log-in']);
-      // console.log(value);
     });
   }
 
@@ -75,7 +73,6 @@ export class AuthService {
       this.isLogged = true;
       this.getUserInfo();
       this.router.navigate(['']);
-      //console.log(value);
     });
   }
 
@@ -86,25 +83,16 @@ export class AuthService {
   }
 
   deleteUser() {
-    const info = localStorage.getItem('auth');
-    if (info) {
-      const userId = JSON.parse(info).id;
-      this.http.delete(BASE_URL + `users/${userId}`).subscribe(() => {
-        localStorage.removeItem('auth');
-        this.logOut();
-      });
-    }
+    this.http.delete(BASE_URL + `users/${this.userInfo.id}`).subscribe(() => {
+      localStorage.removeItem('auth');
+      this.logOut();
+    });
   }
 
   updateUser(body: LoginModel) {
-    const info = localStorage.getItem('auth');
-    if (info) {
-      const userId = JSON.parse(info).id;
-      this.http.put(BASE_URL + `users/${userId}`, body).subscribe((value) => {
-        // console.log(value);
-        localStorage.setItem('auth', JSON.stringify(value));
-        this.getUserInfo();
-      });
-    }
+    this.http.put(BASE_URL + `users/${this.userInfo.id}`, body).subscribe((value) => {
+      localStorage.setItem('auth', JSON.stringify(value));
+      this.getUserInfo();
+    });
   }
 }

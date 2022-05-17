@@ -36,7 +36,7 @@ a {
   }
   .page__descr {
     font-size: 22px;
-    color: #394ce2;
+    color: #465bf9;
     font-weight: 500;
     line-height: 25px;
   }
@@ -143,7 +143,7 @@ a {
         margin: 1px 0;
         font-size: 14px;
         line-height: 16px;
-        color: #394ce2;
+        color: #465bf9;
         &:hover {
           color: rgb(221, 0, 111);
         }
@@ -152,6 +152,7 @@ a {
         @media (max-width: 550px) {
           font-size: 15px;
           line-height: 17px;
+          color: #465bf9;
         }
       }
     }

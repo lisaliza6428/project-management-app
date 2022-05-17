@@ -40,6 +40,10 @@ export class ErrorInterceptor implements HttpInterceptor {
           case 409:
             this.error409Action();
             break;
+
+          case 500:
+            this.error500Action();
+            break;
         }
         return throwError(error);
       }),
@@ -67,7 +71,7 @@ export class ErrorInterceptor implements HttpInterceptor {
     this.router.navigateByUrl('welcome');
   }
 
-  
+
   error403Action() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = {
@@ -84,6 +88,17 @@ export class ErrorInterceptor implements HttpInterceptor {
     dialogConfig.data = {
       name: 'error409',
       message: 'modals.error409.message',
+      actionButtonText: 'modals.error409.confirm',
+      cancelButtonText: 'modals.error409.cancel',
+    };
+    this.dialog.open(ModalComponent, dialogConfig);
+  }
+
+  error500Action() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {
+      name: 'error409',
+      message: 'modals.error500.message',
       actionButtonText: 'modals.error409.confirm',
       cancelButtonText: 'modals.error409.cancel',
     };

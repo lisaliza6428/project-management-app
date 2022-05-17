@@ -23,7 +23,8 @@
 
   <h3 class="form__field-title">{{ 'form.password.password' | translate }}</h3>
   <div class="form__input-wrap">
-    <input class="form__field-input password" formControlName="password" name="password" id="password" [type]="show ? 'text' : 'password'">
+    <input class="form__field-input password" formControlName="password" name="password" id="password"
+      [type]="show ? 'text' : 'password'">
     <button (click)="toggleVisibility($event)" [class]="show? 'show' : 'hide'"></button>
   </div>
   <div class="error-container">
@@ -41,13 +42,9 @@
     </div>
   </div>
 
-
-<div class="buttons-wrapper">
-  <button class="form__submit" [mat-dialog-close] [disabled]="formGroup.invalid" type="submit"> {{
-    'modals.updateProfile.confirm' | translate }}</button>
-  <button class="form__submit" mat-button mat-dialog-close> {{ 'modals.updateProfile.cancel' | translate }}</button>
-
-
-</div>  
-    
+  <div class="buttons-wrapper">
+    <button class="form__submit" [mat-dialog-close] [disabled]="formGroup.invalid" type="submit"> {{
+      'modals.updateProfile.confirm' | translate }}</button>
+    <button class="form__submit" mat-button mat-dialog-close> {{ 'modals.updateProfile.cancel' | translate }}</button>
+  </div>
 </form>
