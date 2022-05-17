@@ -58,7 +58,7 @@ export class AuthService {
 
   getUsers() {
     this.http.get(BASE_URL + 'users').subscribe((value) => {
-      console.log(value);
+      //console.log(value);
     });
   }
 

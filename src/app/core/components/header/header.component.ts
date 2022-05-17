@@ -30,7 +30,6 @@ export class HeaderComponent implements OnInit {
 
   openDialog() {
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = true;
     dialogConfig.data = {
       name: 'logout',
       message: 'modals.logout.message',
