@@ -9,7 +9,7 @@
         </select>
         <div class="header__user" *ngIf="authService.isLogged" routerLink="auth/edit-profile">
           <img class="header__user-icon" src="../../../../assets/svg/user.svg" alt="user">
-          <span class="header__user-name">{{ name }}</span>
+          <span class="header__user-name">{{ authData.name }}</span>
           <img class="header__user-edit" *ngIf="authService.isLogged" routerLink="auth/edit-profile"
             src="../../../../assets/svg/edit.svg" alt="edit">
         </div>

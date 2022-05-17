@@ -12,11 +12,15 @@ export class AuthService {
 
   isLogged = this.checkAuthorization();
 
-  userName = '';
+  userInfo: AuthDataModel = {
+    id: '',
+    login: '',
+    name: '',
+  };
 
   isLoggedChange: Subject<boolean> = new Subject<boolean>();
 
-  userNameChange: Subject<string> = new Subject<string>();
+  userInfoChange: Subject<AuthDataModel> = new Subject<AuthDataModel>();
 
 
   constructor(
@@ -26,10 +30,10 @@ export class AuthService {
     this.isLoggedChange.subscribe((value: boolean) => {
       this.isLogged = value;
     });
-    this.userNameChange.subscribe((value: string) => {
-      this.userName = value;
+    this.userInfoChange.subscribe((value: AuthDataModel) => {
+      this.userInfo = value;
     });
-    this.getUserName();
+    this.getUserInfo();
   }
 
   checkAuthorization() {
@@ -37,15 +41,19 @@ export class AuthService {
   }
 
 
-  getUserName() {
+  getUserInfo() {
     const auth = localStorage.getItem('auth');
     if (auth && this.isLogged) {
       const authData: AuthDataModel = JSON.parse(auth);
-      this.userName = authData.name;
+      this.userInfo = authData;
     } else {
-      this.userName = 'User';
+      this.userInfo = {
+        id: ' ',
+        login: ' ',
+        name: 'User',
+      };
     }
-    this.userNameChange.next(this.userName);
+    this.userInfoChange.next(this.userInfo);
   }
 
   createNewUser(body: SignUpModel) {
@@ -65,7 +73,7 @@ export class AuthService {
     this.http.post(BASE_URL + 'signin', body).subscribe((value) => {
       localStorage.setItem('token', JSON.stringify(value));
       this.isLogged = true;
-      this.getUserName();
+      this.getUserInfo();
       this.router.navigate(['']);
       //console.log(value);
     });
@@ -95,7 +103,7 @@ export class AuthService {
       this.http.put(BASE_URL + `users/${userId}`, body).subscribe((value) => {
         // console.log(value);
         localStorage.setItem('auth', JSON.stringify(value));
-        this.getUserName();
+        this.getUserInfo();
       });
     }
   }

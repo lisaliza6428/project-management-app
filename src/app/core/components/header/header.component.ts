@@ -5,6 +5,7 @@ import { AuthService } from '../../../auth/services/auth.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { TranslateService, TranslateLoader } from '@ngx-translate/core';
 import { ModalComponent } from '../modal/modal.component';
+import { AuthDataModel } from '../../../auth/models/models';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,7 @@ import { ModalComponent } from '../modal/modal.component';
 })
 export class HeaderComponent implements OnInit {
 
-  name = '';
+  authData: AuthDataModel;
 
   constructor(
     public authService: AuthService,
@@ -21,11 +22,11 @@ export class HeaderComponent implements OnInit {
     public translateService: TranslateService,
     public translate: TranslateLoader,
   ) { 
-    this.name = authService.userName;
+    this.authData = authService.userInfo;
   }
 
   ngOnInit() {
-    this.authService.userNameChange.subscribe(value => {this.name = value;});
+    this.authService.userInfoChange.subscribe(value => {this.authData = value;});
   }
 
   openDialog() {
