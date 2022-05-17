@@ -1,4 +1,5 @@
 <div class="container">
+   <button class="back__button" routerLink="/boards">{{'welcome.boardButton' | translate}}</button>
    <div class="edit-page">
       <h3 class="edit-page__title">{{'editProfilePage.title' | translate}}</h3>
       <div (click)="getAuthData()">{{'editProfilePage.name' | translate}} {{ auth.name }}</div>

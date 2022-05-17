@@ -1,5 +1,49 @@
 <div class="container">
-  <p>welcome-page works!</p>
-  <p><a routerLink="/boards">go to Boards</a></p>
-  <p><a routerLink="/auth/log-in">authorize</a></p>
+  <div class="content">
+    <div class="page">
+      <h2 class="page__title">
+        {{ 'welcome.title' | translate }}
+      </h2>
+      <p class="page__descr">
+        {{ 'welcome.descr1' | translate }}
+      </p>
+      <p class="page__descr">
+        {{ 'welcome.descr2' | translate }}
+      </p>
+
+      <div class="page__descr" *ngIf="!authService.isLogged">
+        <p class="page__descr"> {{ 'welcome.descr3' | translate }}</p>
+        <button class="page__button" routerLink="../auth/log-in"> {{ 'header.login' | translate }}</button>
+      </div>
+      <button class="page__button" *ngIf="authService.isLogged" routerLink="/boards">
+        {{ 'welcome.boardButton' | translate }}
+      </button>
+    </div>
+    <div class="page__imgs">
+      <img class="page__img" src="../../../../assets/svg/welcome/1.svg" alt="">
+      <img class="page__img" src="../../../../assets/svg/welcome/2.svg" alt="">
+      <img class="page__img" src="../../../../assets/svg/welcome/3.svg" alt="">
+      <img class="page__img" src="../../../../assets/svg/welcome/4.svg" alt="">
+    </div>
+  </div>
+
+  <h2 class="info__title">{{ 'welcome.team.title' | translate }} </h2>
+  <div class="info-wrapper">
+    <div class="info">
+      <img class="info__img" src="../../../../assets/svg/github.svg" alt="">
+      <div class="info__item">
+        <h2 class="info__name">{{ 'welcome.team.member1' | translate }}</h2>
+        <a class="info__git" href="http://github.com/lisaliza6428" target="_blank">lisaliza6428</a>
+        <p class="info__text">{{ 'welcome.team.descr1' | translate }}</p>
+      </div>
+    </div>
+    <div class="info">
+      <img class="info__img" src="../../../../assets/svg/github.svg" alt="">
+      <div class="info__item">
+        <h2 class="info__name">{{ 'welcome.team.member2' | translate }}</h2>
+        <a class="info__git" href="https://github.com/SiarheiTamkovich" target="_blank">SiarheiTamkovich</a>
+        <p class="info__text">{{ 'welcome.team.descr2' | translate }}</p>
+      </div>
+    </div>
+  </div>
 </div>

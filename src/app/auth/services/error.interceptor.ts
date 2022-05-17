@@ -64,7 +64,7 @@ export class ErrorInterceptor implements HttpInterceptor {
       cancelButtonText: 'modals.error401.cancel',
     };
     this.dialog.open(ModalComponent, dialogConfig);
-    this.router.navigateByUrl('auth/log-in');
+    this.router.navigateByUrl('welcome');
   }
 
   

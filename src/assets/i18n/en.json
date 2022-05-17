@@ -86,5 +86,19 @@
     "tooltips": {
       "openBoard": "Open board"
     }
+  },
+  "welcome": {
+    "title": "Welcome to the Project Management App!",
+    "descr1": "This application is created for planning and organizing processes for both on your own and team work on projects",
+    "descr2":"Set tasks and achieve your goals with Project Management App!",
+    "descr3":"You need to log in to get started:",
+    "boardButton":"Go to my boards",
+    "team": {
+      "title": "Our team",
+      "member1": "Elizaveta Ivanushenko",
+      "descr1":"Authorization, work with API, localization of the application, welcome page",
+      "member2": "Siarhei Tamkovich",
+      "descr2":"Main page with boards, project management page, work with API"
+    }
   }
 }

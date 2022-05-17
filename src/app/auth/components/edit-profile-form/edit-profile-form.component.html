@@ -41,11 +41,13 @@
     </div>
   </div>
 
-  <mat-dialog-actions align="center">
 
-    <button class="form__submit" [mat-dialog-close] [disabled]="formGroup.invalid" type="submit"> {{
-      'modals.updateProfile.confirm' | translate }}</button>
-    <button class="form__submit" mat-button mat-dialog-close> {{ 'modals.updateProfile.cancel' | translate }}</button>
-  </mat-dialog-actions>
+<div class="buttons-wrapper">
+  <button class="form__submit" [mat-dialog-close] [disabled]="formGroup.invalid" type="submit"> {{
+    'modals.updateProfile.confirm' | translate }}</button>
+  <button class="form__submit" mat-button mat-dialog-close> {{ 'modals.updateProfile.cancel' | translate }}</button>
 
+
+</div>  
+    
 </form>

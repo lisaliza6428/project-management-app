@@ -33,7 +33,6 @@ export class EditProfileComponent implements OnInit {
 
   openConfirmDialog() {
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = true;
     dialogConfig.data = {
       name: 'deleteProfile',
       message: 'modals.deleteProfile.message',
@@ -49,5 +48,9 @@ export class EditProfileComponent implements OnInit {
       const info = JSON.parse(auth);
       return info;
     }
+  }
+
+  goBack() {
+    history.back();
   }
 }

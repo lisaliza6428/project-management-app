@@ -1,5 +1,5 @@
 .form {
-  width: 420px;
+  max-width: 420px;
   border: 1px solid black;
   border-radius: 5px;
   margin: 100px auto;
@@ -29,6 +29,9 @@
     }
     &-signup {
       font-size: 28px;
+      @media (max-width: 550px){
+        font-size: 22px;
+      }
     }
   }
   .form__field-title {
@@ -90,6 +93,9 @@
     &:disabled {
       background-color: #fd0481;
       cursor: auto;
+    }
+    @media (max-width: 550px){
+      margin: 10px auto 0 auto;
     }
   }
   .buttons-wrapper {
