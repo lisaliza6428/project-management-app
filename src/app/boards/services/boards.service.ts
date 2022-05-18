@@ -67,5 +67,4 @@ export class BoardsService {
       value => { console.log(value); },
     );
   }
-
 }

@@ -6,6 +6,9 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { TranslateService, TranslateLoader } from '@ngx-translate/core';
 import { ModalComponent } from '../modal/modal.component';
 import { AuthDataModel } from '../../../auth/models/models';
+import { BoardsPageComponent } from '../../../boards/pages/boards-page/boards-page.component';
+import { BoardsService } from '../../../boards/services/boards.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -20,9 +23,11 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     public authService: AuthService,
+    public boardsService: BoardsService,
     public dialog: MatDialog,
     public translateService: TranslateService,
     public translate: TranslateLoader,
+    public router: Router,
   ) {
     this.authData = authService.userInfo;
   }
@@ -55,7 +60,12 @@ export class HeaderComponent implements OnInit {
     this.isSticky = window.pageYOffset >= 80;
   }
 
-  openCreateBoard() {
-    console.log('create b');
+  sendEventCreateBoard() {
+    const boardsPageComponent = new BoardsPageComponent(
+      this.boardsService,
+      this.dialog,
+      this.router,
+    );
+    boardsPageComponent.openDialogCreateBoard();
   }
 }
