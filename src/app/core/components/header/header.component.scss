@@ -1,5 +1,5 @@
 header {
-  padding: 20px;
+  padding: 20px 5px 20px 5px;
   background-color: rgb(99, 159, 255);
 }
 
@@ -10,6 +10,8 @@ header {
 
   .header__right {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .header__select {
@@ -18,7 +20,13 @@ header {
     padding: 5px;
     margin: 0 10px;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 12px;
+    border: solid 1px #fff;
+    color: #fff;
+    background-color: rgb(99, 159, 255);
+    &:hover {
+      background-color: rgb(99, 115, 255);
+    }
   }
 
   .header__user {
@@ -45,12 +53,36 @@ header {
 
   .header__button {
     padding: 5px 10px;
+    margin-top: 5px;
     font-weight: 500;
-    background-color: white;
-    border: 1px solid white;
+    background-color: rgb(99, 159, 255);
+    border: 1px solid #fff;
+    color: #fff;
     border-radius: 5px;
-    margin-left: 10px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 12px;
+    &:hover {
+      background-color: rgb(99, 115, 255);
+    }
   }
+}
+
+.header__button-add-board {
+  padding: 5px 10px;
+  font-weight: 500;
+  background-color: rgb(99, 159, 255);
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  &:hover {
+    background-color: rgb(99, 115, 255);
+  }
+}
+
+.sticky {
+  position: fixed;
+  width: 100%;
+  background-color: rgb(99, 115, 255);
 }

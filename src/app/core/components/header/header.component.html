@@ -1,12 +1,12 @@
-<header>
+<header [ngClass]="{'sticky' : isSticky}">
   <div class="container">
     <div class="header">
-      <div class="header__left" routerLink="/welcome">Project Management App </div>
+      <button class="header__button-add-board">{{ 'boards.addBoardButton' | translate }}</button>
+      <select class="header__select" name="" id="" #mySelect (change)='onSelected(mySelect.value)'>>
+        <option value="en" selected>EN</option>
+        <option value="ru">RU</option>
+      </select>
       <div class="header__right">
-        <select class="header__select" name="" id="" #mySelect (change)='onSelected(mySelect.value)'>>
-          <option value="en" selected>EN</option>
-          <option value="ru">RU</option>
-        </select>
         <div class="header__user" *ngIf="authService.isLogged" routerLink="auth/edit-profile">
           <img class="header__user-icon" src="../../../../assets/svg/user.svg" alt="user">
           <span class="header__user-name">{{ authData.name }}</span>

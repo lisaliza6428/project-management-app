@@ -1,6 +1,6 @@
 /* eslint-disable import/named */
 
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { AuthService } from '../../../auth/services/auth.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { TranslateService, TranslateLoader } from '@ngx-translate/core';
@@ -16,12 +16,14 @@ export class HeaderComponent implements OnInit {
 
   authData: AuthDataModel;
 
+  isSticky: boolean = false;
+
   constructor(
     public authService: AuthService,
     public dialog: MatDialog,
     public translateService: TranslateService,
     public translate: TranslateLoader,
-  ) { 
+  ) {
     this.authData = authService.userInfo;
   }
 
@@ -48,4 +50,8 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  @HostListener('window:scroll', ['$event'])
+  checkScroll() {
+    this.isSticky = window.pageYOffset >= 80;
+  };
 }
