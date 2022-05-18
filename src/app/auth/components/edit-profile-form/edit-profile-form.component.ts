@@ -66,5 +66,4 @@ export class EditProfileFormComponent implements OnInit {
     this.show = !this.show;
     e.preventDefault();
   }
-
 }

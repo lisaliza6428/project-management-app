@@ -58,6 +58,11 @@
       "message": "A user with this email already exists",
       "confirm": "OK",
       "cancel": "Cancel"
+    },
+    "error500": {
+      "message": "Something went wrong. Please, try one more time",
+      "confirm": "OK",
+      "cancel": "Cancel"
     }
   },
   "editProfilePage": {

@@ -1,4 +1,3 @@
-/* eslint-disable @angular-eslint/no-empty-lifecycle-method */
 /* eslint-disable import/named */
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
@@ -6,7 +5,7 @@ import { EditProfileFormComponent } from '../../components/edit-profile-form/edi
 import { AuthDataModel } from '../../models/models';
 import { TranslateLoader } from '@ngx-translate/core';
 import { ModalComponent } from '../../../core/components/modal/modal.component';
-
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-edit-profile',
@@ -15,14 +14,18 @@ import { ModalComponent } from '../../../core/components/modal/modal.component';
 })
 export class EditProfileComponent implements OnInit {
 
-  auth: AuthDataModel = this.getAuthData();
+  authData: AuthDataModel;
 
   constructor(
     public dialog: MatDialog,
     public translateLoader: TranslateLoader,
-  ) { }
+    public authService: AuthService,
+  ) {
+    this.authData = authService.userInfo;
+  }
 
   ngOnInit(): void {
+    this.authService.userInfoChange.subscribe(value => { this.authData = value; });
   }
 
   openEditForm() {
@@ -40,14 +43,6 @@ export class EditProfileComponent implements OnInit {
       cancelButtonText: 'modals.deleteProfile.cancel',
     };
     this.dialog.open(ModalComponent, dialogConfig);
-  }
-
-  getAuthData() {
-    const auth = localStorage.getItem('auth');
-    if (auth) {
-      const info = JSON.parse(auth);
-      return info;
-    }
   }
 
   goBack() {
