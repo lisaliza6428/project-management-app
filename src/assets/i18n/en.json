@@ -1,7 +1,8 @@
 {
   "header": {
     "login": "Log In / Sign Up",
-    "logOut": "Log Out"
+    "logOut": "Log Out",
+    "homeLink": "Home"
   },
   "form": {
     "login": "Log In",
