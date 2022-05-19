@@ -20,7 +20,7 @@
           translate }}</button>
         <button class="header__button" *ngIf="authService.isLogged" (click)="openDialog()">{{ 'header.logOut' |
           translate }}</button>
-        <select class="header__select" name="" id="" #mySelect (change)='onSelected(mySelect.value)'>>
+        <select class="header__select" #mySelect (change)='onSelected(mySelect.value)'>>
           <option value="en" selected>EN</option>
           <option value="ru">RU</option>
         </select>

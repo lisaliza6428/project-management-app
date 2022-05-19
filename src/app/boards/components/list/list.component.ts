@@ -50,6 +50,6 @@ export class ListComponent {
   }
 
   deleteItem() {
-    console.log('delete');
+    //console.log('delete');
   }
 }

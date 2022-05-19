@@ -1,6 +1,7 @@
 header {
-  padding: 20px 5px 20px 5px;
+  padding: 20px 0 20px 0;
   background-color: rgb(99, 159, 255);
+  color: white;
 }
 
 .header {
@@ -26,7 +27,7 @@ header {
     outline: none;
     cursor: pointer;
     padding: 5px;
-    margin: 5px 10px 0 10px;
+    margin: 5px 0px 0 10px;
     border-radius: 5px;
     font-size: 12px;
     border: solid 1px #fff;
@@ -44,7 +45,8 @@ header {
     margin: 0 10px;
     cursor: pointer;
     .header__user-icon {
-      width: 25px;
+      width: 22px;
+      filter: brightness(0) invert(1);
     }
     .header__user-name {
       font-size: 20px;
@@ -56,6 +58,7 @@ header {
       height: 30px;
       margin: 0 5px 0 15px;
       cursor: pointer;
+      filter: brightness(0) invert(1);
     }
   }
 
@@ -77,7 +80,7 @@ header {
 
 .header__button-add-board {
   padding: 5px 10px;
-  margin: 5px 10px 0 10px;
+  margin: 5px 10px 0 0;
   font-weight: 500;
   background-color: rgb(99, 159, 255);
   border: 1px solid #fff;

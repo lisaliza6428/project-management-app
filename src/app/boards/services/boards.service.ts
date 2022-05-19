@@ -22,7 +22,7 @@ export class BoardsService {
       retry(2),
       debounceTime(500),
       catchError(error => {
-        console.log('[ERROR]', error);
+        // console.log('[ERROR]', error);
         return error;
       })
     );
@@ -64,7 +64,9 @@ export class BoardsService {
         'userId': 'dbc4626d-a899-4c8a-92d6-9773253f8129',
       },
     ).subscribe(
-      value => { console.log(value); },
+      value => { 
+        //console.log(value); 
+      },
     );
   }
 }
