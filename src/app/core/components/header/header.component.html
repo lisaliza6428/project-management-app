@@ -2,7 +2,7 @@
   <div class="container">
     <div class="header">
       <div class="header__left">
-        <button class="header__button-add-board" (click)="sendEventCreateBoard()" routerLink="/boards">
+        <button *ngIf="authService.isLogged" class="header__button-add-board" (click)="sendEventCreateBoard()" routerLink="/boards">
           {{ 'boards.addBoardButton' | translate }}
         </button>
         <div class="header__home-link" routerLink="/welcome">
