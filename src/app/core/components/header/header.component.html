@@ -1,23 +1,29 @@
-<header>
+<header [ngClass]="{'sticky' : isSticky}">
   <div class="container">
     <div class="header">
-      <div class="header__left" routerLink="/welcome">Project Management App </div>
+      <div class="header__left">
+        <button class="header__button-add-board" (click)="sendEventCreateBoard()" routerLink="/boards">
+          {{ 'boards.addBoardButton' | translate }}
+        </button>
+        <div class="header__home-link" routerLink="/welcome">
+          {{ 'header.homeLink' | translate }}
+        </div>
+      </div>
       <div class="header__right">
-        <select class="header__select" name="" id="" #mySelect (change)='onSelected(mySelect.value)'>>
-          <option value="en" selected>EN</option>
-          <option value="ru">RU</option>
-        </select>
         <div class="header__user" *ngIf="authService.isLogged" routerLink="auth/edit-profile">
           <img class="header__user-icon" src="../../../../assets/svg/user.svg" alt="user">
           <span class="header__user-name">{{ authData.name }}</span>
           <img class="header__user-edit" *ngIf="authService.isLogged" routerLink="auth/edit-profile"
             src="../../../../assets/svg/edit.svg" alt="edit">
         </div>
-
         <button class="header__button" *ngIf="!authService.isLogged" routerLink="auth/log-in"> {{ 'header.login' |
           translate }}</button>
         <button class="header__button" *ngIf="authService.isLogged" (click)="openDialog()">{{ 'header.logOut' |
           translate }}</button>
+        <select class="header__select" name="" id="" #mySelect (change)='onSelected(mySelect.value)'>>
+          <option value="en" selected>EN</option>
+          <option value="ru">RU</option>
+        </select>
       </div>
     </div>
   </div>

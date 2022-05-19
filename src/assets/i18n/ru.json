@@ -1,7 +1,8 @@
 {
   "header": {
     "login": "Вход / Регистрация",
-    "logOut": "Выйти"
+    "logOut": "Выйти",
+    "homeLink": "Главная"
   },
   "form": {
     "login": "Вход",

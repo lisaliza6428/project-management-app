@@ -43,7 +43,6 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
       defaultLanguage: 'en',
     }),
-
   ],
   providers: [
     AuthService,
