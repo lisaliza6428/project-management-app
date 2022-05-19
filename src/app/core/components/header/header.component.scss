@@ -1,6 +1,7 @@
 header {
   padding: 20px 5px 20px 5px;
   background-color: rgb(99, 159, 255);
+  color: white;
 }
 
 .header {
@@ -44,7 +45,8 @@ header {
     margin: 0 10px;
     cursor: pointer;
     .header__user-icon {
-      width: 25px;
+      width: 22px;
+      filter: brightness(0) invert(1);
     }
     .header__user-name {
       font-size: 20px;
@@ -56,6 +58,7 @@ header {
       height: 30px;
       margin: 0 5px 0 15px;
       cursor: pointer;
+      filter: brightness(0) invert(1);
     }
   }
 
