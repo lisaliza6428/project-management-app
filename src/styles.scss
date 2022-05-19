@@ -1,0 +1,33 @@
+html,
+body {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+
+.container {
+  max-width: 1400px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+input:-webkit-autofill{
+  -webkit-text-fill-color: blue !important;
+}
+
+//Styles for modal windows (must be global)
+
+  mat-dialog-container {
+    background-color: #1d69e2 !important;
+  }
+
+
+  .editProfileForm {
+    mat-dialog-container {
+      background-color: white !important;
+    }
+  }

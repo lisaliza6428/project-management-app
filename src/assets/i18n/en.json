@@ -1,0 +1,110 @@
+{
+  "header": {
+    "login": "Log In / Sign Up",
+    "logOut": "Log Out",
+    "homeLink": "Home"
+  },
+  "form": {
+    "login": "Log In",
+    "signup": "Sign Up",
+    "loginButton": "Log In",
+    "signupButton": "Sign Up",
+    "name": {
+      "name": "name",
+      "enter": "Please, enter your name",
+      "minLengthErr": "At least 3 characters",
+      "maxLengthErr": "No more then 12 characters"
+    },
+    "email": {
+      "enter": "Please, enter your email",
+      "emailErr": "This email is invalid"
+    },
+    "password": {
+      "password": "password",
+      "enter": "Please, enter your password",
+      "upperCaseErr": "At least one uppercase letter",
+      "lowerCaseErr": "At least one lowercase letter",
+      "numberErr": "At least one number",
+      "specialErr": "At least one special character (#?!@$%^&*-)",
+      "lengthErr": "At least 8 characters"
+    }
+  },
+  "modals": {
+    "logout": {
+      "message": "Are you sure you want to leave?",
+      "confirm": "Yes, Log Out",
+      "cancel": "Cancel"
+    },
+    "deleteProfile": {
+      "message": "Are you sure you want to delete your profile?",
+      "confirm": "Yes, delete",
+      "cancel": "Cancel"
+    },
+    "updateProfile": {
+      "title": "Please, enter new profile data",
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    },
+    "error401": {
+      "message": "Your session has expired. You must be logged in to continue.",
+      "confirm": "Log In",
+      "cancel": "Cancel"
+    },
+    "error403": {
+      "message": "Incorrect email or password",
+      "confirm": "OK",
+      "cancel": "Cancel"
+    },
+    "error409": {
+      "message": "A user with this email already exists",
+      "confirm": "OK",
+      "cancel": "Cancel"
+    },
+    "error500": {
+      "message": "Something went wrong. Please, try one more time",
+      "confirm": "OK",
+      "cancel": "Cancel"
+    }
+  },
+  "editProfilePage": {
+    "title": "Your profile data:",
+    "name": "name:",
+    "email": "email:",
+    "editButton": "Edit profile",
+    "deleteButton": "Delete profile"
+  },
+  "boards": {
+    "addBoardButton": "+ Add board",
+    "delBoardButton": "Delete board",
+    "addListButton": "+ Add List",
+    "list": {
+      "enterNewItem": "Enter a new item",
+      "addItemButton": "+ Add item"
+    },
+    "dialog": {
+      "delateBoard": "Are you sure you want to delete the board?",
+      "cancelButton": "Cancel",
+      "yesButton": "Yes",
+      "createBoardName": "Board name",
+      "createBoardDescription": "Board description",
+      "createListName": "Card name"
+    },
+    "tooltips": {
+      "openBoard": "Open board"
+    }
+  },
+  "welcome": {
+    "title": "Welcome to the Project Management App!",
+    "descr1": "This application is created for planning and organizing processes for both on your own and team work on projects",
+    "descr2":"Set tasks and achieve your goals with Project Management App!",
+    "descr3":"You need to log in to get started:",
+    "boardButton":"Go to my boards",
+    "team": {
+      "title": "Our team",
+      "member1": "Elizaveta Ivanushenko",
+      "descr1":"Authorization, work with API, localization of the application, welcome page",
+      "member2": "Siarhei Tamkovich",
+      "descr2":"Main page with boards, project management page, work with API"
+    }
+  }
+}

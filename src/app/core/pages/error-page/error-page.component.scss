@@ -1,0 +1,21 @@
+.page {
+margin: 50px 0;
+}
+.page__info {
+  font-size: 26px;
+  font-weight: 500;
+  color: rgb(221, 0, 111);
+}
+.page__link {
+  transition: 0.7s;
+  display: inline-block;
+  font-size: 20px;
+  color: rgb(221, 0, 111);
+  border-bottom: 1px solid rgb(221, 0, 111);
+  &:hover {
+    transition: 0.7s;
+    color: #394ce2;
+    border-bottom: 1px solid #394ce2;
+    cursor: pointer;
+  }
+}

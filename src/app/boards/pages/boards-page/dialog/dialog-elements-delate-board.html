@@ -1,0 +1,11 @@
+<div class="confirmForm">
+  <h2 mat-dialog-title>{{ 'boards.dialog.delateBoard' | translate }}</h2>
+  <div mat-dialog-actions class="dialog__button">
+    <button mat-button mat-dialog-close >
+      {{ 'boards.dialog.cancelButton' | translate }}
+    </button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>
+      {{ 'boards.dialog.yesButton' | translate }}
+    </button>
+  </div>
+</div>

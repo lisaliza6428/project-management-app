@@ -1,0 +1,41 @@
+<div class="container">
+  <form class="form" [formGroup]="formGroup" novalidate (submit)="onSubmit()">
+    <div class="form__title">
+      <span class="form__title-login">{{ 'form.login' | translate }}</span>
+      <span class="form__title-divider"> /</span>
+      <span class="form__title-signup" routerLink="../sign-up">{{ 'form.signup' | translate }}</span>
+    </div>
+    <h3 class="form__field-title">email</h3>
+    <input class="form__field-input" formControlName="login" name="login" id="login" type="text">
+    <div class="error-container">
+      <div *ngIf="_login.invalid && (_login.touched || _login.dirty || _login.untouched)">
+        <span class="message" *ngIf="_login.errors?.['required']">{{ 'form.email.enter' | translate }}</span>
+        <span class="message" *ngIf="_login.errors?.['email']">{{ 'form.email.emailErr' | translate }}</span>
+      </div>
+    </div>
+
+    <h3 class="form__field-title">{{ 'form.password.password' | translate }}</h3>
+    <div class="form__input-wrap">
+      <input class="form__field-input password" formControlName="password" name="password" id="password" [type]="show ? 'text' : 'password'">
+      <button (click)="toggleVisibility($event)" [class]="show? 'show' : 'hide'"></button>
+    </div>
+
+    <div class="error-container">
+      <div *ngIf="_password.invalid && (_password.touched || _password.dirty || _password.untouched)">
+        <span class="message" *ngIf="_password.errors?.['required']">{{ 'form.password.enter' | translate }}</span>
+        <span class="message" *ngIf="_password.errors?.['validateUpperCase'] && _password.dirty">
+          {{ 'form.password.upperCaseErr' | translate }}</span>
+        <span class="message" *ngIf="_password.errors?.['validateLowerCase'] && _password.dirty">
+          {{ 'form.password.lowerCaseErr' | translate }}</span>
+        <span class="message" *ngIf="_password.errors?.['validateNumbers'] && _password.dirty">
+          {{ 'form.password.numberErr' | translate }}</span>
+        <span class="message" *ngIf="_password.errors?.['validateSpecial'] && _password.dirty">
+          {{ 'form.password.specialErr' | translate }}</span>
+        <span class="message" *ngIf="_password.errors?.['minlength']"> {{ 'form.password.lengthErr' | translate }}</span>
+      </div>
+    </div>
+
+    <button class="form__submit" [disabled]="formGroup.invalid" type="submit">{{ 'form.loginButton' | translate }}</button>
+  </form>
+</div>
+

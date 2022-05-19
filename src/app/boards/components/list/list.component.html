@@ -1,0 +1,28 @@
+<div class="list-container">
+  <div class="list-title">
+    <p>{{title}}</p>
+    <mat-icon id="{{id}}" (click)="getListID(id)">clear</mat-icon>
+  </div>
+  <div cdkDropList [cdkDropListData]="items" (cdkDropListDropped)="drop($event)" class="list">
+    <div *ngFor="let item of items" cdkDrag>
+      <div class="list__item">
+        <div>{{item}}</div>
+        <mat-icon (click)="deleteItem()">clear</mat-icon>
+      </div>
+    </div>
+  </div>
+  <form #newItemForm="ngForm" (ngSubmit)="onSubmit(newItemForm)">
+    <div class="input-container ic1">
+      <input
+        id="add-item"
+        class="item-input"
+        name="newItem"
+        ngModel type="text"
+        placeholder=" "
+      >
+      <div class="cut"></div>
+      <label for="add-item" class="placeholder">{{ 'boards.list.enterNewItem' | translate }}</label>
+    </div>
+      <button type="submit" class="item-button">{{ 'boards.list.addItemButton' | translate }}</button>
+  </form>
+</div>

@@ -1,0 +1,15 @@
+.dialog__title {
+  text-align: center;
+}
+
+.dialog__button {
+  border: 1px solid rgb(159, 187, 251);
+  width: 120px;
+  padding: 0px;
+  margin: 5px;
+  transition: 0.7s;
+  &:hover {
+    border: 1px solid white;
+    transition: 0.7s;
+  }
+}

@@ -1,0 +1,110 @@
+header {
+  padding: 20px 0 20px 0;
+  background-color: rgb(99, 159, 255);
+  color: white;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .header__left {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .header__right {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .header__select {
+    outline: none;
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px 0px 0 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    border: solid 1px #fff;
+    color: #fff;
+    background-color: rgb(99, 159, 255);
+    &:hover {
+      background-color: rgb(99, 115, 255);
+    }
+  }
+
+  .header__user {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+    .header__user-icon {
+      width: 22px;
+      filter: brightness(0) invert(1);
+    }
+    .header__user-name {
+      font-size: 20px;
+      margin-left: 3px;
+    }
+
+    .header__user-edit {
+      width: 25px;
+      height: 30px;
+      margin: 0 5px 0 15px;
+      cursor: pointer;
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  .header__button {
+    padding: 5px 10px;
+    margin-top: 5px;
+    font-weight: 500;
+    background-color: rgb(99, 159, 255);
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    &:hover {
+      background-color: rgb(99, 115, 255);
+    }
+  }
+}
+
+.header__button-add-board {
+  padding: 5px 10px;
+  margin: 5px 10px 0 0;
+  font-weight: 500;
+  background-color: rgb(99, 159, 255);
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  &:hover {
+    background-color: rgb(99, 115, 255);
+  }
+}
+
+.sticky {
+  position: fixed;
+  width: 100%;
+  padding: 15px 5px 15px 5px;
+  background-color: rgb(99, 115, 255);
+  z-index: 10;
+}
+
+.header__home-link {
+  font-size: 20px;
+  margin-top: 5px;
+  padding-left: 10px;
+  cursor: pointer;
+  text-decoration: underline;
+}
