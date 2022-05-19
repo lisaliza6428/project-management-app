@@ -1,5 +1,5 @@
 header {
-  padding: 20px 5px 20px 5px;
+  padding: 20px 0 20px 0;
   background-color: rgb(99, 159, 255);
   color: white;
 }
@@ -27,7 +27,7 @@ header {
     outline: none;
     cursor: pointer;
     padding: 5px;
-    margin: 5px 10px 0 10px;
+    margin: 5px 0px 0 10px;
     border-radius: 5px;
     font-size: 12px;
     border: solid 1px #fff;
@@ -80,7 +80,7 @@ header {
 
 .header__button-add-board {
   padding: 5px 10px;
-  margin: 5px 10px 0 10px;
+  margin: 5px 10px 0 0;
   font-weight: 500;
   background-color: rgb(99, 159, 255);
   border: 1px solid #fff;
