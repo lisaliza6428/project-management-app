@@ -148,6 +148,12 @@
 
 mat-icon{
   font-size: 16px;
+  color: #07d;
   cursor: pointer;
   text-align: right;
+}
+
+.list__item {
+  display: flex;
+  justify-content: space-between;
 }
