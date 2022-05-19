@@ -49,4 +49,7 @@ export class ListComponent {
     this.newItemEvent.emit(id);
   }
 
+  deleteItem() {
+    console.log('delete');
+  }
 }

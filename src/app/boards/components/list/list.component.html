@@ -1,15 +1,15 @@
 <div class="list-container">
   <div class="list-title">
     <p>{{title}}</p>
-    <mat-icon 
-      aria-hidden="false" 
-      aria-label="Example home icon"
-      id="{{id}}"
-      (click)="getListID(id)"
-    >clear</mat-icon>
+    <mat-icon id="{{id}}" (click)="getListID(id)">clear</mat-icon>
   </div>
   <div cdkDropList [cdkDropListData]="items" (cdkDropListDropped)="drop($event)" class="list">
-    <div *ngFor="let item of items" cdkDrag>{{item}}</div>
+    <div *ngFor="let item of items" cdkDrag>
+      <div class="list__item">
+        <div>{{item}}</div>
+        <mat-icon (click)="deleteItem()">clear</mat-icon>
+      </div>
+    </div>
   </div>
   <form #newItemForm="ngForm" (ngSubmit)="onSubmit(newItemForm)">
     <div class="input-container ic1">
